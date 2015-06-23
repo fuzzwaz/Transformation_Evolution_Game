@@ -80,10 +80,7 @@ public class playerMovement : MonoBehaviour {
 		else
 		{isMoving = false;}
 
-
-
 		this.transform.position = new Vector3(this.transform.position.x + horizontalMovement, this.transform.position.y + verticalMovement, 0.0f);
-
 	}
 
 	public void stopSide (int side)

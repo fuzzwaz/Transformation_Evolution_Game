@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: f4e9b667ec8fa464f8e903658e4fae98
+timeCreated: 1434939984
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FullAmoeba_0
+    21300002: FullAmoeba_1
+    21300004: FullAmoeba_2
+    21300006: FullAmoeba_3
+    21300008: FullAmoeba_4
+    21300010: FullAmoeba_5
+    21300012: FullAmoeba_6
+    21300014: FullAmoeba_7
+    21300016: FullAmoeba_8
+    21300018: FullAmoeba_9
+    21300020: FullAmoeba_10
+    21300022: FullAmoeba_11
+    21300024: FullAmoeba_12
+    21300026: FullAmoeba_13
+    21300028: FullAmoeba_14
+    21300030: FullAmoeba_15
+    21300032: FullAmoeba_16
+    21300034: FullAmoeba_17
+    21300036: FullAmoeba_18
+    21300038: FullAmoeba_19
+    21300040: FullAmoeba_20
+    21300042: FullAmoeba_21
+    21300044: FullAmoeba_22
+    21300046: FullAmoeba_23
+    21300048: FullAmoeba_24
+    21300050: FullAmoeba_25
+    21300052: FullAmoeba_26
+    21300054: FullAmoeba_27
+    21300056: FullAmoeba_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 128
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FullAmoeba_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 999
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1007
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 775
+        width: 238
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 906
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_4
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 934
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_5
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 911
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_6
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 930
+        width: 73
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_7
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 848
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_8
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 842
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_9
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 873
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_10
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 769
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_11
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 763
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_12
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 797
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 701
+        width: 53
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_14
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 694
+        width: 39
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_15
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 699
+        width: 67
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_16
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 610
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 542
+        width: 84
+        height: 125
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_18
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 538
+        width: 65
+        height: 139
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_19
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 546
+        width: 77
+        height: 123
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_20
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 388
+        width: 108
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_21
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 475
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 394
+        width: 61
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_23
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 239
+        width: 109
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_24
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 296
+        width: 61
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 78
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_26
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 157
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_27
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 19
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_28
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 627
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
