@@ -24,6 +24,7 @@ public class playerShooting : MonoBehaviour {
 	private bool released = false;
 
 	public TailStack tailStack;
+	public Animator playerAnimation;
 	Colorizer colorizer;
 
 	void Awake()
@@ -100,6 +101,7 @@ public class playerShooting : MonoBehaviour {
 
 	void Shoot()
 	{
+		playerAnimation.SetTrigger("Shoot");
 		tailStack.RemoveSegment();
 		GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,this.transform.position,Quaternion.identity);
 		newBullet.GetComponent<bullet>().playerBullet = playerNum;

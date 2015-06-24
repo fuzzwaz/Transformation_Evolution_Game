@@ -31,7 +31,7 @@ public class playerMovement : MonoBehaviour {
 
 	Rigidbody2D rb2d;
 	public GameObject eyeBrows;
-
+	public Animator playerAnimation;
 
 	// Use this for initialization
 	void Start () {
@@ -59,6 +59,7 @@ public class playerMovement : MonoBehaviour {
 			canDash = false;
 			isDashing = true;
 			eyeBrows.SetActive(true);
+			rb2d.AddForce(rb2d.velocity.normalized * playerSpeed, ForceMode2D.Impulse);
 		}
 
 		if (canDash == false)
@@ -142,7 +143,12 @@ public class playerMovement : MonoBehaviour {
 
 	public void killed()
 	{
+		playerAnimation.SetTrigger("Die");
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
+	}
+
+	public void CleanUpDeceasedBody()
+	{
 		Destroy (this.gameObject);
 	}
 }
