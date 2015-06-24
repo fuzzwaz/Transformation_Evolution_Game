@@ -72,7 +72,6 @@ public class playerShooting : MonoBehaviour {
 			recoiled = false;
 			playerShots--;
 			this.GetComponent<playerMovement>().increaseSpeed();
-			playerSprite.gameObject.transform.localScale = new Vector3 (playerSprite.transform.localScale.x - sizeChange,playerSprite.transform.localScale.y - sizeChange, 1);
 			timer = 0.0f;
 		}
 
@@ -94,7 +93,6 @@ public class playerShooting : MonoBehaviour {
 	{
 		tailStack.AddSegment();
 		playerShots++;
-		playerSprite.gameObject.transform.localScale = new Vector3 (playerSprite.transform.localScale.x + sizeChange,playerSprite.transform.localScale.y + sizeChange, 1);
 
 		this.GetComponent<playerMovement>().decreaseSpeed();
 	}
@@ -113,5 +111,8 @@ public class playerShooting : MonoBehaviour {
 		this.GetComponent<Rigidbody2D>().AddForce(recoilDirection * recoilForce,ForceMode2D.Impulse);
 		shooting = true;
 		released = false;
+
+        //Add a count to bullets shot
+        this.GetComponent<playerAbilities>().bulletsShot++;
 	}
 }

@@ -21,6 +21,7 @@ public class playerMovement : MonoBehaviour {
 	public float dashDelay = 0.5f;
 	public bool isDashing = false;
 
+    private float lengthOfLife = 0.0f;
 	private float savedPlayerSpeed = 450.0f;
 	private float savedDashDuration = 0.25f;
 	private float savedDashDelay = 0.5f;
@@ -42,6 +43,7 @@ public class playerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        lengthOfLife += Time.deltaTime;
 		if (dashDuration < savedDashDuration)
 		{dashDuration -= Time.deltaTime;}
 		if (dashDuration < 0.0f)
@@ -60,6 +62,8 @@ public class playerMovement : MonoBehaviour {
 			isDashing = true;
 			eyeBrows.SetActive(true);
 			rb2d.AddForce(rb2d.velocity.normalized * playerSpeed, ForceMode2D.Impulse);
+
+            this.GetComponent<playerAbilities>().dashesMade++;
 		}
 
 		if (canDash == false)
@@ -145,6 +149,9 @@ public class playerMovement : MonoBehaviour {
 	{
 		playerAnimation.SetTrigger("Die");
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
+        this.GetComponent<playerAbilities>().lengthOfLife = lengthOfLife;
+        this.GetComponent<playerAbilities>().UpdatePlayerInfo();
+        Destroy (this.gameObject);
 	}
 
 	public void CleanUpDeceasedBody()

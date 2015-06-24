@@ -3,16 +3,52 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	private float restartTimer = 10.0f;
+	public struct playerInfo
+	{
+		public bool playerDied; //done
 
+		public int playerNum; //done
+		public int bulletsShot; //done
+		public int dashesMade; //done
+		public int bulletHits; //done
+		public int surroundingObjects; // !!!!!!! not done yet !!!!!!!
+		public int dashingHits; // !!!!!!! not done yet !!!!!!!
+
+		public float deathRange; //done
+		public float lengthOfLife;
+
+	}
+
+	public playerInfo[] PlayerInformation;
+
+	private float restartTimer = 10.0f;
 	private int playersAlive = 3;
 	private bool p1Dead = false;
 	private bool p2Dead = false;
 	private bool p3Dead = false;
 	private bool p4Dead = false;
+
+
 	// Use this for initialization
 	void Start () {
-	
+		PlayerInformation = new playerInfo[4];
+		resetPlayers();
+	}
+
+	void resetPlayers()
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			PlayerInformation[i].playerDied = false;
+			PlayerInformation[i].playerNum = i + 1;
+			PlayerInformation[i].bulletsShot = 0;
+			PlayerInformation[i].dashesMade = 0;
+			PlayerInformation[i].bulletHits = 0;
+			PlayerInformation[i].surroundingObjects = 0;
+			PlayerInformation[i].dashingHits = 0;
+			PlayerInformation[i].deathRange = 0.0f;
+			PlayerInformation[i].lengthOfLife = 0.0f;
+		}
 	}
 	
 	// Update is called once per frame
@@ -56,6 +92,7 @@ public class GameManager : MonoBehaviour {
 			p4Dead = true;
 		}
 
+		PlayerInformation[player - 1].playerDied = true;
 		playersAlive--;
 
 	}

@@ -7,9 +7,10 @@ public class bullet : MonoBehaviour {
 	private float timer = 0.0f;
 	private bool canGet = false;
 	private bool pickedUp = false;
+	private GameObject player;
 	// Use this for initialization
 	void Start () {
-
+		player = (GameObject) GameObject.Find ("Player" + playerBullet);
 	}
 	
 	// Update is called once per frame
@@ -35,6 +36,11 @@ public class bullet : MonoBehaviour {
 			if (col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
 			{
 				Destroy(this.gameObject);
+
+				//Ability update
+				player.GetComponent<playerAbilities>().bulletHits++;
+				player.GetComponent<playerAbilities>().deathRange = Vector2.Distance(player.transform.position,this.transform.position);
+				print (player.GetComponent<playerAbilities>().deathRange);
 				col.transform.parent.gameObject.GetComponent<playerMovement>().killed ();
 			}
 		}
@@ -47,20 +53,6 @@ public class bullet : MonoBehaviour {
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			canGet = true;
 		}
-		
-		else if (col.tag == "Player" && canGet && pickedUp == false)
-		{
-			Destroy(this.gameObject);
-			col.gameObject.GetComponentInParent<playerShooting>().BulletPickedUp();
-			pickedUp = true;
-		}
-		else if (col.tag == "Player")
-		{
-			if (col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
-			{
-				Destroy(this.gameObject);
-				col.transform.parent.gameObject.GetComponent<playerMovement>().killed ();
-			}
-		}
+
 	}
 }
