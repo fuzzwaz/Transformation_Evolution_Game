@@ -24,6 +24,12 @@ public class playerShooting : MonoBehaviour {
 	private bool released = false;
 
 	public TailStack tailStack;
+	Colorizer colorizer;
+
+	void Awake()
+	{
+		colorizer = GetComponent<Colorizer>();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -96,6 +102,8 @@ public class playerShooting : MonoBehaviour {
 	{
 		tailStack.RemoveSegment();
 		GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,this.transform.position,Quaternion.identity);
+		newBullet.GetComponent<bullet>().playerBullet = playerNum;
+		newBullet.GetComponent<SpriteRenderer>().color = colorizer.color;
 		Vector2 bulletDirection = new Vector2(aimingReticle.transform.position.x - this.transform.position.x,aimingReticle.transform.position.y - this.transform.position.y);
 		bulletDirection.Normalize();
 		recoilDirection = bulletDirection * -1;

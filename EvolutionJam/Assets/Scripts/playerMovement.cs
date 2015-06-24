@@ -30,6 +30,7 @@ public class playerMovement : MonoBehaviour {
 	private GameObject GM;
 
 	Rigidbody2D rb2d;
+	public GameObject eyeBrows;
 
 
 	// Use this for initialization
@@ -48,6 +49,7 @@ public class playerMovement : MonoBehaviour {
 			dashDuration = savedDashDuration;
 			playerSpeed = savedPlayerSpeed;
 			isDashing = false;
+			eyeBrows.SetActive(false);
 		}
 
 		if (Input.GetAxis ("Dash" + playerNum.ToString()) == 1.0f && canDash) 
@@ -56,6 +58,7 @@ public class playerMovement : MonoBehaviour {
 			dashDuration -= Time.deltaTime;
 			canDash = false;
 			isDashing = true;
+			eyeBrows.SetActive(true);
 		}
 
 		if (canDash == false)
@@ -142,5 +145,4 @@ public class playerMovement : MonoBehaviour {
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
 		Destroy (this.gameObject);
 	}
-
 }
