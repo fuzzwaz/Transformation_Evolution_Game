@@ -11,7 +11,12 @@ public class TailStack : MonoBehaviour {
 	Stack<GameObject> segments;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+	}
+
+	void Awake()
+	{
 		segments = new Stack<GameObject>();
 	}
 
@@ -42,24 +47,6 @@ public class TailStack : MonoBehaviour {
 		if(segments.Count > 0)
 		{
 			segments.Peek().GetComponent<DistanceJoint2D>().connectedBody = body.GetComponent<Rigidbody2D>();
-		}
-	}
-
-
-	//DEBUG variables and functions
-	public bool addSegment = false;
-	public bool removeSegment = false;
-	void Update()
-	{
-		if(addSegment)
-		{
-			addSegment = false;
-			AddSegment();
-		}		
-		if(removeSegment)
-		{
-			removeSegment = false;
-			RemoveSegment();
 		}
 	}
 }

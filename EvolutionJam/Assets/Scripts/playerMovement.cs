@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour {
 	public float dashDelay = 0.5f;
 	public bool isDashing = false;
 
-	private float savedPlayerSpeed = 10.0f;
+	private float savedPlayerSpeed = 450.0f;
 	private float savedDashDuration = 0.25f;
 	private float savedDashDelay = 0.5f;
 	private bool canDash = true;
@@ -29,10 +29,13 @@ public class playerMovement : MonoBehaviour {
 	private float horizontalMovement = 0;
 	private GameObject GM;
 
+	Rigidbody2D rb2d;
+
 
 	// Use this for initialization
 	void Start () {
 		GM = GameObject.Find ("GameManager");
+		rb2d = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -62,7 +65,7 @@ public class playerMovement : MonoBehaviour {
 			dashDelay = savedDashDelay;
 			canDash = true;
 		}
-
+		/*
 		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * Time.deltaTime * playerSpeed;
 		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * Time.deltaTime * playerSpeed;
 
@@ -81,6 +84,14 @@ public class playerMovement : MonoBehaviour {
 		{isMoving = false;}
 
 		this.transform.position = new Vector3(this.transform.position.x + horizontalMovement, this.transform.position.y + verticalMovement, 0.0f);
+		*/
+	}
+
+	void FixedUpdate()
+	{
+		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * playerSpeed;
+		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * playerSpeed;
+		rb2d.AddForce(new Vector2(horizontalMovement, verticalMovement));
 	}
 
 	public void stopSide (int side)
