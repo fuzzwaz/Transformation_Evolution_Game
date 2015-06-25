@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 04b2146e9ce15454ea88c553c338bba9
-timeCreated: 1435191212
+timeCreated: 1435269114
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -96,7 +96,7 @@ TextureImporter:
         width: 252
         height: 858
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_1
       rect:
@@ -106,7 +106,7 @@ TextureImporter:
         width: 194
         height: 659
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_2
       rect:
@@ -116,7 +116,7 @@ TextureImporter:
         width: 241
         height: 535
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_3
       rect:
@@ -126,7 +126,7 @@ TextureImporter:
         width: 239
         height: 381
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_4
       rect:
@@ -136,7 +136,7 @@ TextureImporter:
         width: 254
         height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_5
       rect:
@@ -146,7 +146,7 @@ TextureImporter:
         width: 254
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_6
       rect:
@@ -156,7 +156,7 @@ TextureImporter:
         width: 192
         height: 252
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_7
       rect:
@@ -166,7 +166,7 @@ TextureImporter:
         width: 256
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_8
       rect:
@@ -176,7 +176,7 @@ TextureImporter:
         width: 191
         height: 253
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_9
       rect:
@@ -186,7 +186,7 @@ TextureImporter:
         width: 84
         height: 439
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_10
       rect:
@@ -196,7 +196,7 @@ TextureImporter:
         width: 201
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_11
       rect:
@@ -206,7 +206,7 @@ TextureImporter:
         width: 97
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_12
       rect:
@@ -216,7 +216,7 @@ TextureImporter:
         width: 191
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_13
       rect:
@@ -226,7 +226,7 @@ TextureImporter:
         width: 178
         height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_14
       rect:
@@ -236,7 +236,7 @@ TextureImporter:
         width: 178
         height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_15
       rect:
@@ -246,7 +246,7 @@ TextureImporter:
         width: 178
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_16
       rect:
@@ -256,7 +256,7 @@ TextureImporter:
         width: 450
         height: 291
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_17
       rect:
@@ -266,7 +266,7 @@ TextureImporter:
         width: 448
         height: 291
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_18
       rect:
@@ -276,7 +276,7 @@ TextureImporter:
         width: 359
         height: 356
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_19
       rect:
@@ -286,7 +286,7 @@ TextureImporter:
         width: 117
         height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_20
       rect:
@@ -296,7 +296,7 @@ TextureImporter:
         width: 112
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_21
       rect:
@@ -306,7 +306,7 @@ TextureImporter:
         width: 98
         height: 107
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_22
       rect:
@@ -316,7 +316,7 @@ TextureImporter:
         width: 115
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_23
       rect:
@@ -326,7 +326,7 @@ TextureImporter:
         width: 115
         height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_24
       rect:
@@ -336,7 +336,7 @@ TextureImporter:
         width: 98
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_25
       rect:
@@ -346,7 +346,7 @@ TextureImporter:
         width: 109
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_26
       rect:
@@ -356,7 +356,7 @@ TextureImporter:
         width: 115
         height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_27
       rect:
@@ -366,7 +366,7 @@ TextureImporter:
         width: 390
         height: 396
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_28
       rect:
@@ -376,7 +376,7 @@ TextureImporter:
         width: 473
         height: 276
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_29
       rect:
@@ -386,7 +386,7 @@ TextureImporter:
         width: 185
         height: 191
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_30
       rect:
@@ -396,7 +396,7 @@ TextureImporter:
         width: 179
         height: 116
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_31
       rect:
@@ -406,7 +406,7 @@ TextureImporter:
         width: 178
         height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_32
       rect:
@@ -416,7 +416,7 @@ TextureImporter:
         width: 191
         height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_33
       rect:
@@ -425,8 +425,8 @@ TextureImporter:
         y: 126
         width: 1367
         height: 1690
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .665951431, y: .488254488}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_34
       rect:
@@ -435,8 +435,8 @@ TextureImporter:
         y: 570
         width: 483
         height: 737
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_35
       rect:
@@ -445,8 +445,8 @@ TextureImporter:
         y: 601
         width: 465
         height: 652
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_36
       rect:
@@ -455,8 +455,8 @@ TextureImporter:
         y: 689
         width: 446
         height: 508
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_37
       rect:
@@ -465,8 +465,8 @@ TextureImporter:
         y: 782
         width: 349
         height: 315
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_38
       rect:
@@ -475,8 +475,8 @@ TextureImporter:
         y: 501
         width: 494
         height: 919
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
