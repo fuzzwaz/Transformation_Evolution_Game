@@ -2,11 +2,9 @@
 using System.Collections;
 
 public class dashAttack : MonoBehaviour {
-
-	private GameObject player;
+	
 	// Use this for initialization
 	void Start () {
-		player = this.transform.parent.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -14,24 +12,25 @@ public class dashAttack : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D (Collider2D col)
+	void OnCollisionEnter2D (Collision2D col)
 	{
-		if (col.tag == "Player")
+		if (col.gameObject.tag == "Player")
 		{
-			if (player.gameObject.GetComponent<playerMovement>().isDashing)
+			if (gameObject.GetComponent<playerMovement>().isDashing)
 			{
-				col.gameObject.transform.parent.gameObject.GetComponent<playerMovement>().killed ();
+				col.gameObject.GetComponent<playerMovement>().killed ();
+				this.GetComponent<playerAbilities>().dashingHits++;
 			}
 		}
 	}
 
-	void OnTriggerStay2D (Collider2D col)
+	void OnCollisionStay2D (Collision2D col)
 	{
-		if (col.tag == "Player")
+		if (col.gameObject.tag == "Player")
 		{
-			if (player.gameObject.GetComponent<playerMovement>().isDashing)
+			if (gameObject.GetComponent<playerMovement>().isDashing)
 			{
-				col.gameObject.transform.parent.gameObject.GetComponent<playerMovement>().killed ();
+				col.gameObject.GetComponent<playerMovement>().killed ();
 			}
 		}
 	}

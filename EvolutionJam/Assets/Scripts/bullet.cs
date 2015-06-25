@@ -44,7 +44,6 @@ public class bullet : MonoBehaviour {
 				//Ability update
 				player.GetComponentInChildren<playerAbilities>().bulletHits++;
 				player.GetComponentInChildren<playerAbilities>().deathRange = Vector2.Distance(player.transform.position,this.transform.position);
-				print (player.GetComponentInChildren<playerAbilities>().deathRange);
 				col.gameObject.GetComponent<playerMovement>().killed();
 			}
 		}

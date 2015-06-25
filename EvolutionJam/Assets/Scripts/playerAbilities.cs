@@ -8,6 +8,7 @@ public class playerAbilities : MonoBehaviour {
 	public int dashesMade = 0;
 	public int bulletHits = 0;
 	public int dashingHits = 0;
+	public int surroundingObjects = 0;
 	public float deathRange = 0.0f;
 	public float lengthOfLife = 0.0f;
 	
@@ -31,7 +32,8 @@ public class playerAbilities : MonoBehaviour {
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].bulletHits = bulletHits;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].deathRange = deathRange;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].lengthOfLife = lengthOfLife;
-
+		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].surroundingObjects = surroundingObjects;
+		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].dashingHits = dashingHits;
 	}
 
 	public void abl_Block()

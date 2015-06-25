@@ -11,11 +11,11 @@ public class GameManager : MonoBehaviour {
 		public int bulletsShot; //done
 		public int dashesMade; //done
 		public int bulletHits; //done
-		public int surroundingObjects; // !!!!!!! not done yet !!!!!!!
-		public int dashingHits; // !!!!!!! not done yet !!!!!!!
+		public int surroundingObjects; //done
+		public int dashingHits; //done
 
 		public float deathRange; //done
-		public float lengthOfLife;
+		public float lengthOfLife; // done
 
 	}
 
