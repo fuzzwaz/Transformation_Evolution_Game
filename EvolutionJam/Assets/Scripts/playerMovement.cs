@@ -151,7 +151,6 @@ public class playerMovement : MonoBehaviour {
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
         this.GetComponent<playerAbilities>().lengthOfLife = lengthOfLife;
         this.GetComponent<playerAbilities>().UpdatePlayerInfo();
-        Destroy (this.gameObject);
 	}
 
 	public void CleanUpDeceasedBody()

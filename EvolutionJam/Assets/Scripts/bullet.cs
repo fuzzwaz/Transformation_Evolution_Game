@@ -11,6 +11,10 @@ public class bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = (GameObject) GameObject.Find ("Player" + playerBullet);
+		if(player == null)
+		{
+			Debug.Log("Bullet couldn't find the player");
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,10 +42,10 @@ public class bullet : MonoBehaviour {
 				Destroy(this.gameObject);
 
 				//Ability update
-				player.GetComponent<playerAbilities>().bulletHits++;
-				player.GetComponent<playerAbilities>().deathRange = Vector2.Distance(player.transform.position,this.transform.position);
-				print (player.GetComponent<playerAbilities>().deathRange);
-				col.transform.parent.gameObject.GetComponent<playerMovement>().killed ();
+				player.GetComponentInChildren<playerAbilities>().bulletHits++;
+				player.GetComponentInChildren<playerAbilities>().deathRange = Vector2.Distance(player.transform.position,this.transform.position);
+				print (player.GetComponentInChildren<playerAbilities>().deathRange);
+				col.gameObject.GetComponent<playerMovement>().killed();
 			}
 		}
 	}
