@@ -100,6 +100,20 @@ public class playerMovement : MonoBehaviour {
 		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * playerSpeed;
 		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * playerSpeed;
 		rb2d.AddForce(new Vector2(horizontalMovement, verticalMovement));
+
+		RotateToAimDirection();
+	}
+
+	void RotateToAimDirection()
+	{
+		Vector2 v = new Vector2(Input.GetAxis("AimHorz" + playerNum.ToString()), Input.GetAxis("AimVert" + playerNum.ToString()));
+		v.Normalize();
+		float angle = Vector2.Angle(Vector2.up, v);
+		if(Input.GetAxis("AimHorz" + playerNum.ToString()) > 0.0f)
+		{
+			angle = 360 - angle;
+		}
+		transform.eulerAngles = new Vector3(0, 0, angle);
 	}
 
 	public void stopSide (int side)
