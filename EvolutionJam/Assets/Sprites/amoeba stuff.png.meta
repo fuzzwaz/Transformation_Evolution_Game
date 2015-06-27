@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 04b2146e9ce15454ea88c553c338bba9
-timeCreated: 1435424781
+timeCreated: 1435439535
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -181,66 +181,6 @@ TextureImporter:
         height: 276
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_33
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 126
-        width: 1367
-        height: 1690
-      alignment: 9
-      pivot: {x: .641678572, y: .488884717}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_34
-      rect:
-        serializedVersion: 2
-        x: 1453
-        y: 570
-        width: 483
-        height: 737
-      alignment: 4
-      pivot: {x: 0, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_35
-      rect:
-        serializedVersion: 2
-        x: 1951
-        y: 601
-        width: 465
-        height: 652
-      alignment: 4
-      pivot: {x: 0, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_36
-      rect:
-        serializedVersion: 2
-        x: 2445
-        y: 689
-        width: 446
-        height: 508
-      alignment: 4
-      pivot: {x: 0, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_37
-      rect:
-        serializedVersion: 2
-        x: 2912
-        y: 782
-        width: 349
-        height: 315
-      alignment: 4
-      pivot: {x: 0, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_38
-      rect:
-        serializedVersion: 2
-        x: 3289
-        y: 501
-        width: 494
-        height: 919
-      alignment: 4
-      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_4
       rect:
@@ -519,6 +459,16 @@ TextureImporter:
         y: 2979
         width: 425
         height: 427
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3003
+        height: 1729
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
