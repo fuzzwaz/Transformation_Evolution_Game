@@ -35,6 +35,7 @@ public class playerMovement : MonoBehaviour {
 	private GameObject GM;
 
 	Rigidbody2D rb2d;
+	public Collider2D bodyCollider;
 	public GameObject eyeBrows;
 	public Animator playerAnimation;
 	bool dead = false;
@@ -175,6 +176,8 @@ public class playerMovement : MonoBehaviour {
         this.GetComponent<playerAbilities>().UpdatePlayerInfo();
 		Destroy(shooting);
 		Destroy(tailStack);
+		Destroy(bodyCollider);
+		Destroy(rb2d);
 	}
 
 	public void CleanUpDeceasedBody()

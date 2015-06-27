@@ -982,7 +982,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -75.7319412, y: -7.5566597, z: 0}
+  m_LocalPosition: {x: -105.299438, y: -4.04741669, z: 0}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children:
   - {fileID: 420348}
@@ -1373,6 +1373,7 @@ MonoBehaviour:
   isDashing: 0
   poisionDelay: .300000012
   poision: {fileID: 155024, guid: 987d86805f648431082c49864655bac2, type: 2}
+  bodyCollider: {fileID: 5863014}
   eyeBrows: {fileID: 164128}
   playerAnimation: {fileID: 9544342}
   shooting: {fileID: 11462314}
