@@ -11,6 +11,7 @@ public class playerShooting : MonoBehaviour {
 
 	public SpriteRenderer aimingReticle;
 	public Color aiming;
+	public GameObject reticle;
 	public Color reticleColor;
 	public GameObject bullet;
 	public float bulletForce = 1500.0f;
@@ -64,6 +65,17 @@ public class playerShooting : MonoBehaviour {
 				Vector2 bulletDirection = new Vector2(aimingReticle.transform.position.x - this.transform.position.x,aimingReticle.transform.position.y - this.transform.position.y);
 				bulletDirection.Normalize();
 				Shoot(bulletDirection);
+
+				if (this.GetComponent<playerAbilities>().p_SpreadShot)
+				{
+					Vector2 upDirection = new Vector2(bulletDirection.x - 0.25f, bulletDirection.y - 0.25f);
+					Vector2 downDirection = new Vector2(bulletDirection.x + 0.25f, bulletDirection.y + 0.25f);
+
+					upDirection.Normalize();
+					downDirection.Normalize();
+					Shoot (upDirection);
+					Shoot (downDirection);
+				}
 			}
 		}
 
@@ -80,7 +92,6 @@ public class playerShooting : MonoBehaviour {
 		{
 			shooting = false;
 			recoiled = false;
-			playerShots--;
 			this.GetComponent<playerMovement>().increaseSpeed();
 			timer = 0.0f;
 		}
@@ -113,17 +124,22 @@ public class playerShooting : MonoBehaviour {
 	{
 		playerAnimation.SetTrigger("Unsquish");
 		squish = false;
-		tailStack.RemoveSegment();
-		GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,this.transform.position,Quaternion.identity);
-		newBullet.GetComponent<bullet>().playerBullet = playerNum;
-		newBullet.GetComponent<SpriteRenderer>().color = colorizer.color;
-		recoilDirection = bulletDirection * -1;
-		newBullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletForce);
-		this.GetComponent<Rigidbody2D>().AddForce(recoilDirection * recoilForce,ForceMode2D.Impulse);
-		shooting = true;
-		released = false;
 
-        //Add a count to bullets shot
-        this.GetComponent<playerAbilities>().bulletsShot++;
+		if (playerShots > 0)
+		{
+			tailStack.RemoveSegment();
+			GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,reticle.transform.position,Quaternion.identity);
+			newBullet.GetComponent<bullet>().playerBullet = playerNum;
+			newBullet.GetComponent<SpriteRenderer>().color = colorizer.color;
+			recoilDirection = bulletDirection * -1;
+			newBullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletForce);
+			this.GetComponent<Rigidbody2D>().AddForce(recoilDirection * recoilForce,ForceMode2D.Impulse);
+			shooting = true;
+			released = false;
+			playerShots--;
+
+	        //Add a count to bullets shot
+	        this.GetComponent<playerAbilities>().bulletsShot++;
+		}
 	}
 }

@@ -19,6 +19,8 @@ public class playerAbilities : MonoBehaviour {
 	public bool p_SpreadShot = false;
 
 	public int p_bodySpikes = 0;
+
+	public float p_explosiveShot = 0.0f;
 	
 	private int playerNumID;
 	private GameObject gameManager;
@@ -71,13 +73,15 @@ public class playerAbilities : MonoBehaviour {
 		}
 	}
 
-	public void abl_SpreadShot(bool has) 
+	public void abl_SpreadShot(bool has) //completed and tested
 	{
 		p_SpreadShot = has;
 	}
 
-	public void abl_ExplosiveShot(float explosiveMultiplier)
-	{}
+	public void abl_ExplosiveShot(float explosiveMultiplier) //completed and tested
+	{
+		p_explosiveShot = explosiveMultiplier;
+	}
 
 	public void abl_BouncingShot(float bounces) 
 	{}
