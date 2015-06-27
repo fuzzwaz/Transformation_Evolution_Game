@@ -12,19 +12,23 @@ public class playerMovement : MonoBehaviour {
 
 	/*Specific variables for the player*/
 	public int playerNum = 1;
-	public float playerSpeed = 10.0f;
+	public float playerSpeed = 1350.0f;
 	public float playerSpeedChange = 0.5f;
 
 	/*Variables relating to dash that can change*/
 	public float dashDuration = 0.2f;
 	public float dashSpeed = 40.0f;
-	public float dashDelay = 0.5f;
+	private float dashDelay = 1.5f;
 	public bool isDashing = false;
 
+	public float poisionDelay = 0.3f;
+	public GameObject poision;
+	private float poisionDelayTemp;
+
     private float lengthOfLife = 0.0f;
-	private float savedPlayerSpeed = 450.0f;
+	private float savedPlayerSpeed = 1350.0f;
 	private float savedDashDuration = 0.25f;
-	private float savedDashDelay = 0.5f;
+	private float savedDashDelay = 1.5f;
 	private bool canDash = true;
 	private float verticalMovement = 0;
 	private float horizontalMovement = 0;
@@ -38,6 +42,7 @@ public class playerMovement : MonoBehaviour {
 	void Start () {
 		GM = GameObject.Find ("GameManager");
 		rb2d = GetComponent<Rigidbody2D>();
+		poisionDelayTemp = poisionDelay;
 	}
 	
 	// Update is called once per frame
@@ -73,26 +78,17 @@ public class playerMovement : MonoBehaviour {
 			dashDelay = savedDashDelay;
 			canDash = true;
 		}
-		/*
-		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * Time.deltaTime * playerSpeed;
-		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * Time.deltaTime * playerSpeed;
 
-		if (blockTop && verticalMovement > 0.0f)
-		{verticalMovement = 0.0f;}
-		if (blockBot && verticalMovement < 0.0f)
-		{verticalMovement = 0.0f;}
-		if (blockRight && horizontalMovement > 0.0f)
-		{horizontalMovement = 0.0f;}
-		if (blockLeft && horizontalMovement < 0.0f)
-		{horizontalMovement = 0.0f;}
-
-		if (verticalMovement != 0.0f || horizontalMovement != 0.0f)
-		{isMoving = true;}
-		else
-		{isMoving = false;}
-
-		this.transform.position = new Vector3(this.transform.position.x + horizontalMovement, this.transform.position.y + verticalMovement, 0.0f);
-		*/
+		if (this.GetComponent<playerAbilities>().p_Poision)
+		{
+			if (poisionDelay < 0)
+			{
+				poisionDelay = poisionDelayTemp;
+				GameObject newPoision = (GameObject) GameObject.Instantiate(poision,this.transform.position,Quaternion.identity);
+				newPoision.GetComponent<poisionGas>().setPlayer(playerNum);
+			}
+			poisionDelay -= Time.deltaTime;
+		}
 	}
 
 	void FixedUpdate()
