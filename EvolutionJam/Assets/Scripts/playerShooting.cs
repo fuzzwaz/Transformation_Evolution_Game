@@ -17,7 +17,7 @@ public class playerShooting : MonoBehaviour {
 	public float bulletForce = 1500.0f;
 	private float bulletDelay = 0.05f;
 	public float recoilForce = 3.0f;
-	
+
 	private float timer = 0.0f;
 	private bool shooting = false;
 	private bool recoiled = false;

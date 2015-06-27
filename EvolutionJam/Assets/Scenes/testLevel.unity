@@ -103,7 +103,7 @@ GameObject:
   - 60: {fileID: 28159681}
   m_Layer: 0
   m_Name: amoeba stuff_39 (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - 60: {fileID: 33062779}
   m_Layer: 0
   m_Name: amoeba stuff_30
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   - 60: {fileID: 215005725}
   m_Layer: 0
   m_Name: amoeba stuff_39
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,7 +540,7 @@ GameObject:
   - 60: {fileID: 275414769}
   m_Layer: 0
   m_Name: amoeba stuff_22
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,7 +727,7 @@ GameObject:
   - 60: {fileID: 320520926}
   m_Layer: 0
   m_Name: amoeba stuff_32 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,7 +811,7 @@ GameObject:
   - 60: {fileID: 327232680}
   m_Layer: 0
   m_Name: amoeba stuff_51 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +901,7 @@ GameObject:
   - 60: {fileID: 333262296}
   m_Layer: 0
   m_Name: amoeba stuff_44 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   - 60: {fileID: 362716109}
   m_Layer: 0
   m_Name: amoeba stuff_39 (5)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - 60: {fileID: 377196427}
   m_Layer: 0
   m_Name: amoeba stuff_45
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1175,7 +1175,7 @@ GameObject:
   - 60: {fileID: 377254526}
   m_Layer: 0
   m_Name: amoeba stuff_51 (8)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1265,7 +1265,7 @@ GameObject:
   - 60: {fileID: 380520561}
   m_Layer: 0
   m_Name: amoeba stuff_7
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,7 +1363,7 @@ GameObject:
   - 60: {fileID: 461576532}
   m_Layer: 0
   m_Name: amoeba stuff_22
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1498,7 +1498,7 @@ GameObject:
   - 60: {fileID: 483320593}
   m_Layer: 0
   m_Name: amoeba stuff_47
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1595,7 +1595,7 @@ GameObject:
   - 60: {fileID: 503378618}
   m_Layer: 0
   m_Name: amoeba stuff_50 (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1680,7 +1680,7 @@ GameObject:
   - 60: {fileID: 538294519}
   m_Layer: 0
   m_Name: amoeba stuff_52
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1771,7 +1771,7 @@ GameObject:
   - 60: {fileID: 573398411}
   m_Layer: 0
   m_Name: amoeba stuff_39 (7)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1859,7 +1859,7 @@ GameObject:
   - 60: {fileID: 590455499}
   m_Layer: 0
   m_Name: amoeba stuff_44 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,7 +1946,7 @@ GameObject:
   - 60: {fileID: 593124680}
   m_Layer: 0
   m_Name: amoeba stuff_50 (7)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2150,7 +2150,7 @@ GameObject:
   - 60: {fileID: 749152099}
   m_Layer: 0
   m_Name: amoeba stuff_32 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2234,7 +2234,7 @@ GameObject:
   - 60: {fileID: 778299254}
   m_Layer: 0
   m_Name: amoeba stuff_29
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2321,7 +2321,7 @@ GameObject:
   - 60: {fileID: 798077491}
   m_Layer: 0
   m_Name: amoeba stuff_51 (4)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2411,7 +2411,7 @@ GameObject:
   - 60: {fileID: 801034956}
   m_Layer: 0
   m_Name: amoeba stuff_29 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2590,7 +2590,7 @@ GameObject:
   - 60: {fileID: 841999793}
   m_Layer: 0
   m_Name: amoeba stuff_50 (6)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2675,7 +2675,7 @@ GameObject:
   - 60: {fileID: 856868291}
   m_Layer: 0
   m_Name: amoeba stuff_50 (4)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2848,7 +2848,7 @@ GameObject:
   - 60: {fileID: 884437608}
   m_Layer: 0
   m_Name: amoeba stuff_51 (9)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2941,7 +2941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &888150431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2976,7 +2976,7 @@ Transform:
   m_GameObject: {fileID: 888150430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .553961277, y: 2.01417446, z: 0}
-  m_LocalScale: {x: 10, y: 8, z: 1}
+  m_LocalScale: {x: 10, y: 8, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -2992,7 +2992,7 @@ GameObject:
   - 60: {fileID: 909688923}
   m_Layer: 0
   m_Name: amoeba stuff_15
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3083,7 +3083,7 @@ GameObject:
   - 60: {fileID: 918032219}
   m_Layer: 0
   m_Name: amoeba stuff_15
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3174,7 +3174,7 @@ GameObject:
   - 60: {fileID: 937849289}
   m_Layer: 0
   m_Name: amoeba stuff_51 (7)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3383,7 +3383,7 @@ GameObject:
   - 60: {fileID: 1050339209}
   m_Layer: 0
   m_Name: amoeba stuff_39 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3586,7 +3586,7 @@ GameObject:
   - 60: {fileID: 1070598736}
   m_Layer: 0
   m_Name: amoeba stuff_31 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3667,7 +3667,7 @@ GameObject:
   - 60: {fileID: 1112929935}
   m_Layer: 0
   m_Name: amoeba stuff_50 (8)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3927,7 +3927,7 @@ GameObject:
   - 60: {fileID: 1185395213}
   m_Layer: 0
   m_Name: amoeba stuff_50 (9)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4127,7 +4127,7 @@ GameObject:
   - 60: {fileID: 1238231965}
   m_Layer: 0
   m_Name: amoeba stuff_39 (6)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4215,7 +4215,7 @@ GameObject:
   - 60: {fileID: 1328681165}
   m_Layer: 0
   m_Name: amoeba stuff_49
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4309,7 +4309,7 @@ GameObject:
   - 60: {fileID: 1334453293}
   m_Layer: 0
   m_Name: amoeba stuff_31
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4429,7 +4429,7 @@ GameObject:
   - 60: {fileID: 1393582969}
   m_Layer: 0
   m_Name: amoeba stuff_50
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4514,7 +4514,7 @@ GameObject:
   - 60: {fileID: 1463225375}
   m_Layer: 0
   m_Name: amoeba stuff_6
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4612,7 +4612,7 @@ GameObject:
   - 60: {fileID: 1507951455}
   m_Layer: 0
   m_Name: amoeba stuff_29
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4699,7 +4699,7 @@ GameObject:
   - 60: {fileID: 1523637371}
   m_Layer: 0
   m_Name: amoeba stuff_52
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4790,7 +4790,7 @@ GameObject:
   - 60: {fileID: 1540960781}
   m_Layer: 0
   m_Name: amoeba stuff_29 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5057,7 +5057,7 @@ GameObject:
   - 60: {fileID: 1569562989}
   m_Layer: 0
   m_Name: amoeba stuff_51
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5147,7 +5147,7 @@ GameObject:
   - 60: {fileID: 1594531662}
   m_Layer: 0
   m_Name: amoeba stuff_29 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5234,7 +5234,7 @@ GameObject:
   - 60: {fileID: 1609673273}
   m_Layer: 0
   m_Name: amoeba stuff_51 (6)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5482,7 +5482,7 @@ GameObject:
   - 60: {fileID: 1715891249}
   m_Layer: 0
   m_Name: amoeba stuff_50 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5567,7 +5567,7 @@ GameObject:
   - 60: {fileID: 1717625409}
   m_Layer: 0
   m_Name: amoeba stuff_51 (5)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5657,7 +5657,7 @@ GameObject:
   - 60: {fileID: 1724900908}
   m_Layer: 0
   m_Name: amoeba stuff_50 (5)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5742,7 +5742,7 @@ GameObject:
   - 60: {fileID: 1727570034}
   m_Layer: 0
   m_Name: amoeba stuff_30 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5914,7 +5914,7 @@ GameObject:
   - 60: {fileID: 1736536420}
   m_Layer: 0
   m_Name: amoeba stuff_29 (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6001,7 +6001,7 @@ GameObject:
   - 60: {fileID: 1744560020}
   m_Layer: 0
   m_Name: amoeba stuff_39 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6353,7 +6353,7 @@ GameObject:
   - 60: {fileID: 1775498987}
   m_Layer: 0
   m_Name: amoeba stuff_30 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6843,7 +6843,7 @@ GameObject:
   - 60: {fileID: 1866891700}
   m_Layer: 0
   m_Name: amoeba stuff_50 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6928,7 +6928,7 @@ GameObject:
   - 60: {fileID: 1891524544}
   m_Layer: 0
   m_Name: amoeba stuff_49
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7022,7 +7022,7 @@ GameObject:
   - 60: {fileID: 1908820023}
   m_Layer: 0
   m_Name: amoeba stuff_51
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7112,7 +7112,7 @@ GameObject:
   - 60: {fileID: 1918676394}
   m_Layer: 0
   m_Name: amoeba stuff_51 (1)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7202,7 +7202,7 @@ GameObject:
   - 60: {fileID: 1957881991}
   m_Layer: 0
   m_Name: amoeba stuff_31 (2)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7283,7 +7283,7 @@ GameObject:
   - 60: {fileID: 1973928888}
   m_Layer: 0
   m_Name: amoeba stuff_44
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7370,7 +7370,7 @@ GameObject:
   - 60: {fileID: 1995285272}
   m_Layer: 0
   m_Name: amoeba stuff_51 (3)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7460,7 +7460,7 @@ GameObject:
   - 60: {fileID: 2046356068}
   m_Layer: 0
   m_Name: amoeba stuff_51 (10)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7550,7 +7550,7 @@ GameObject:
   - 60: {fileID: 2049326977}
   m_Layer: 0
   m_Name: amoeba stuff_39 (4)
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7744,7 +7744,7 @@ GameObject:
   - 60: {fileID: 2141283909}
   m_Layer: 0
   m_Name: amoeba stuff_32
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

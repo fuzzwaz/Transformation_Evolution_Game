@@ -277,9 +277,9 @@ namespace FuzzyEvolutions
          #endregion
       }
 
-      public void RunWithInputs()
+      public void RunWithInputs(playerInfo[] playerInformation)
       {
-         MakeInputVariableValues();
+         MakeInputVariableValues(playerInformation);
          var selectionLabel = EvaluateRules();
 
          foreach (var output in _outputs)
@@ -292,7 +292,7 @@ namespace FuzzyEvolutions
          ResetAllOutputs();
       }
 
-      private void MakeInputVariableValues()
+      private void MakeInputVariableValues(playerInfo[] playerInformation)
       {
          _inputVariableValues.Add(Labels.InputVariable_Dashes, 3);
          _inputVariableValues.Add(Labels.InputVariable_BulletsShot, 8);

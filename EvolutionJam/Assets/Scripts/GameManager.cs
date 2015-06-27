@@ -1,47 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public struct playerInfo
+{
+	public bool playerDied; //done
+	
+	public int playerNum; //done
+	public int bulletsShot; //done
+	public int dashesMade; //done
+	public int bulletHits; //done
+	public int surroundingObjects; //done
+	public int dashingHits; //done
+	
+	public float deathRange; //done
+	public float lengthOfLife; // done
+	
+}
+
+public struct playerAbilityMap
+{
+	public bool a_block;
+	public bool a_seeking;
+	public bool a_poison;
+	public bool a_spread;
+	public bool a_blink;
+	public bool a_piercing;
+	public bool a_spikingDash;
+	
+	public int a_spike;
+	public int a_moreAmmo;
+	public int a_bouncing;
+	
+	public float a_gravity;
+	public float a_explosive;
+	public float a_longerDash;
+	public float a_fasterDash;
+	public float a_fasterShot;
+	public float a_largerShot;
+	public float a_growingDash;
+	public float a_fasterMovement;
+}
+
 public class GameManager : MonoBehaviour {
 
-	public struct playerInfo
-	{
-		public bool playerDied; //done
 
-		public int playerNum; //done
-		public int bulletsShot; //done
-		public int dashesMade; //done
-		public int bulletHits; //done
-		public int surroundingObjects; //done
-		public int dashingHits; //done
-
-		public float deathRange; //done
-		public float lengthOfLife; // done
-
-	}
-
-	public struct playerAbilityMap
-	{
-		public bool a_block;
-		public bool a_seeking;
-		public bool a_poison;
-		public bool a_spread;
-		public bool a_blink;
-		public bool a_piercing;
-		public bool a_spikingDash;
-		
-		public int a_spike;
-		public int a_moreAmmo;
-		public int a_bouncing;
-
-		public float a_gravity;
-		public float a_explosive;
-		public float a_longerDash;
-		public float a_fasterDash;
-		public float a_fasterShot;
-		public float a_largerShot;
-		public float a_growingDash;
-		public float a_fasterMovement;
-	}
 
 	public playerInfo[] PlayerInformation;
 	public playerAbilityMap[] PlayerAbilities;
@@ -163,7 +165,7 @@ public class GameManager : MonoBehaviour {
 			PlayerAbilities[i].a_bouncing = 0;
 			
 			PlayerAbilities[i].a_gravity = 0.0f;
-			PlayerAbilities[i].a_explosive = 0.0f;
+			PlayerAbilities[i].a_explosive = 1.0f;
 			PlayerAbilities[i].a_longerDash = 0.0f;
 			PlayerAbilities[i].a_fasterShot = 0.0f;
 			PlayerAbilities[i].a_fasterDash = 0.0f;
@@ -172,9 +174,9 @@ public class GameManager : MonoBehaviour {
 			PlayerAbilities[i].a_fasterMovement = 0.0f;
 			
 			PlayerAbilities[i].a_block = false;
-			PlayerAbilities[i].a_seeking = false;
+			PlayerAbilities[i].a_seeking = true;
 			PlayerAbilities[i].a_poison = false;
-			PlayerAbilities[i].a_spread = false;
+			PlayerAbilities[i].a_spread = true;
 			PlayerAbilities[i].a_blink = false;
 			PlayerAbilities[i].a_piercing = false;
 			PlayerAbilities[i].a_spikingDash = false;

@@ -45,7 +45,7 @@ public class bullet : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col)
 	{
 
-		if (player.GetComponent<playerAbilities>().p_explosiveShot > 0.0f)
+		if (player.gameObject != null && player.GetComponent<playerAbilities>().p_explosiveShot > 0.0f)
 		{
 			if (notExploded)
 			{
