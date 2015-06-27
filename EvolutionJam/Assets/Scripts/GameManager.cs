@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FuzzyEvolutions;
 
 public struct playerInfo
 {
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour {
 
 	public playerInfo[] PlayerInformation;
 	public playerAbilityMap[] PlayerAbilities;
+	public GameObject AIManager;
 
 	private float restartTimer = 10.0f;
 	private int playersAlive = 4;
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour {
 	private bool p2Dead = false;
 	private bool p3Dead = false;
 	private bool p4Dead = false;
+
+	public FuzzyInferenceEngine fuzzyEngine;
 	
 
 	// Use this for initialization
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour {
 		PlayerInformation = new playerInfo[4];
 		PlayerAbilities = new playerAbilityMap[4];
 		playerObjects = new GameObject[4];
+		fuzzyEngine = new FuzzyInferenceEngine();
 		resetPlayers();
 		roundStart ();
 	}
@@ -115,6 +120,7 @@ public class GameManager : MonoBehaviour {
 
 	void roundStart()
 	{
+		fuzzyEngine.RunWithInputs(PlayerInformation);
 		for (int i = 0; i < 4; i++)
 		{
 			if (playerObjects[i] != null)

@@ -1,11 +1,13 @@
 ﻿using System;
+using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using FuzzyEvolutions.MembershipFunctions;
 using FuzzyEvolutions.Inputs;
 
 namespace FuzzyEvolutions
 {
-   public class FuzzyInferenceEngine
+	public class FuzzyInferenceEngine 
    {
       private readonly IDictionary<string, int> _inputVariableValues;
       private readonly ICollection<FuzzyOutput> _outputs;
@@ -16,6 +18,8 @@ namespace FuzzyEvolutions
          _inputVariableValues = new Dictionary<string, int>();
          _outputs = new List<FuzzyOutput>();
          _rules = new List<FuzzyRule>();
+
+
 
          #region Input Setup
 
@@ -279,9 +283,10 @@ namespace FuzzyEvolutions
 
       public void RunWithInputs(playerInfo[] playerInformations)
       {
+
          foreach (var playerInformation in playerInformations)
          {
-            if (!playerInformation.playerdied)
+            if (!playerInformation.playerDied)
             {
                continue;
             }
@@ -289,12 +294,6 @@ namespace FuzzyEvolutions
             MakeInputVariableValues(playerInformation);
             var selectionLabel = EvaluateRules();
 
-            foreach (var output in _outputs)
-            {
-               Console.WriteLine(output.Label + ": " + output.Centroid);
-            }
-
-            Console.WriteLine("\nSelection: " + selectionLabel);
 
             _inputVariableValues.Clear();
             ResetAllOutputs();
@@ -348,74 +347,93 @@ namespace FuzzyEvolutions
          if (selectionLabel == Labels.Output_Block)
          {
             // Block selected.
+				Debug.Log (playerNumber + ": Block Selected");
          }
          else if (selectionLabel == Labels.Output_SeekingShot)
          {
             // SeekingShot selected.
+				Debug.Log (playerNumber + ": Seeking Selected");
+
          }
          else if (selectionLabel == Labels.Output_PoisonGas)
          {
             // PoisonGas selected.
+				Debug.Log (playerNumber + ": Poision Selected");
          }
          else if (selectionLabel == Labels.Output_SpikeOnBody)
          {
             // SpikeOnBody selected.
+				Debug.Log (playerNumber + ": Spike Selected");
          }
          else if (selectionLabel == Labels.Output_SpreadShot)
          {
             // SpreadShot selected.
+				Debug.Log (playerNumber + ": Spread Selected");
          }
          else if (selectionLabel == Labels.Output_ExplosiveShot)
          {
             // ExplosiveShot selected.
+				Debug.Log (playerNumber + ": Explosive Selected");
          }
          else if (selectionLabel == Labels.Output_BouncingShot)
          {
             // BouncingShot selected.
+				Debug.Log (playerNumber + ": Bounce Selected");
          }
          else if (selectionLabel == Labels.Output_Blink)
          {
             // Blink selected.
+				Debug.Log (playerNumber + ": Blink Selected");
          }
          else if (selectionLabel == Labels.Output_PiercingShot)
          {
             // PiercingShot selected.
+				Debug.Log (playerNumber + ": Piercing Selected");
          }
          else if (selectionLabel == Labels.Output_LongerDash)
          {
             // LongerDash selected.
+				Debug.Log (playerNumber + ": Longer Dash Selected");
          }
          else if (selectionLabel == Labels.Output_FasterDash)
          {
             // FasterDash selected.
+				Debug.Log (playerNumber + ": Faster Dash Selected");
          }
          else if (selectionLabel == Labels.Output_MoreAmmo)
          {
             // MoreAmmo selected.
+				Debug.Log (playerNumber + ": More Ammo Selected");
          }
          else if (selectionLabel == Labels.Output_FasterBullets)
          {
             // FasterBullets selected.
+				Debug.Log (playerNumber + ": Faster Bullets Selected");
          }
          else if (selectionLabel == Labels.Output_LargerBullets)
          {
             // LargerBullets selected.
+				Debug.Log (playerNumber + ": Larger Bullets Selected");
          }
          else if (selectionLabel == Labels.Output_GrowingDash)
          {
             // GrowingDash selected.
+				Debug.Log (playerNumber + ": Growing Dash Selected");
          }
          else if (selectionLabel == Labels.Output_SpikesWhenDashing)
          {
             // SpikesWhenDashing selected.
+				Debug.Log (playerNumber + ": Spikes when Dashing Selected");
          }
          else if (selectionLabel == Labels.Output_BlackHoleShot)
          {
             // BlackHoleShot selected.
+				Debug.Log (playerNumber + ": BlackHole Selected");
          }
          else if (selectionLabel == Labels.Output_FasterMovement)
          {
             // FasterMovement selected.
+				Debug.Log (playerNumber + ": Faster Movement Selected");
          }
       }
    }
