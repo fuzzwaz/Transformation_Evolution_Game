@@ -950,7 +950,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.4708138, y: -22.6490612, z: 0}
+  m_LocalPosition: {x: -63.9003525, y: 3.64254951, z: 0}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children:
   - {fileID: 420348}
@@ -1281,6 +1281,8 @@ MonoBehaviour:
   isDashing: 0
   eyeBrows: {fileID: 164128}
   playerAnimation: {fileID: 9544342}
+  shooting: {fileID: 11462314}
+  tailStack: {fileID: 187876}
 --- !u!114 &11462314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1319,6 +1321,7 @@ MonoBehaviour:
   dashesMade: 0
   bulletHits: 0
   dashingHits: 0
+  surroundingObjects: 0
   deathRange: 0
   lengthOfLife: 0
 --- !u!114 &11482954
@@ -1332,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be357ffb52edf24bb1c7e57e02b8601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentClone: {fileID: 110674, guid: 16199caed8a11954abd086fe3884d506, type: 2}
+  segmentClone: {fileID: 161438, guid: 576d50095d4533044b1f43b663555feb, type: 2}
   body: {fileID: 193070}
   color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &11487514

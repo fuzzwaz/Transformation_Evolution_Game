@@ -33,6 +33,9 @@ public class playerMovement : MonoBehaviour {
 	Rigidbody2D rb2d;
 	public GameObject eyeBrows;
 	public Animator playerAnimation;
+	bool dead = false;
+	public playerShooting shooting;
+	public GameObject tailStack;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +45,11 @@ public class playerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(dead)
+		{
+			return;
+		}
 
         lengthOfLife += Time.deltaTime;
 		if (dashDuration < savedDashDuration)
@@ -161,10 +169,13 @@ public class playerMovement : MonoBehaviour {
 
 	public void killed()
 	{
+		dead = true;
 		playerAnimation.SetTrigger("Die");
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
         this.GetComponent<playerAbilities>().lengthOfLife = lengthOfLife;
         this.GetComponent<playerAbilities>().UpdatePlayerInfo();
+		Destroy(shooting);
+		Destroy(tailStack);
 	}
 
 	public void CleanUpDeceasedBody()

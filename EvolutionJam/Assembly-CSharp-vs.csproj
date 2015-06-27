@@ -55,6 +55,7 @@
      <Compile Include="Assets\Prefabs\Camera\veritcalTriggers.cs" />
      <Compile Include="Assets\Scripts\Colorizer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\TailLink.cs" />
      <Compile Include="Assets\Scripts\TailStack.cs" />
      <Compile Include="Assets\Scripts\WhaleMovement.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
