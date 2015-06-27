@@ -24,7 +24,7 @@ public class bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.GetComponent<playerAbilities>().p_Seeking && seekPlayer == 1)
+		if (player.gameObject != null && player.GetComponent<playerAbilities>().p_Seeking && seekPlayer == 1)
 		{
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 
@@ -60,7 +60,10 @@ public class bullet : MonoBehaviour {
 		{
 			if (col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
 			{
-				Destroy(this.gameObject);
+				if (this.gameObject != null)
+				{
+					Destroy(this.gameObject);
+				}
 			
 				//Ability update
 				player.GetComponentInChildren<playerAbilities>().bulletHits++;

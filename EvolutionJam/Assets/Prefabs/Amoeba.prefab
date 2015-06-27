@@ -254,7 +254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &136816
 GameObject:
   m_ObjectHideFlags: 1
@@ -982,7 +982,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: 28.5, z: 0}
+  m_LocalPosition: {x: 2.18711948, y: .330413103, z: 0}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_Children:
   - {fileID: 420348}
@@ -1375,6 +1375,9 @@ MonoBehaviour:
   poision: {fileID: 155024, guid: 987d86805f648431082c49864655bac2, type: 2}
   eyeBrows: {fileID: 164128}
   playerAnimation: {fileID: 9544342}
+  shooting: {fileID: 11462314}
+  tailStack: {fileID: 187876}
+  deathSound: {fileID: 8300000, guid: dc24fa59851e837469272fcef324d8e8, type: 3}
 --- !u!114 &11462314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,6 +1422,7 @@ MonoBehaviour:
   p_Block: 0
   p_Seeking: 0
   p_Poision: 0
+  p_bodySpikes: 0
 --- !u!114 &11482056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1442,7 +1446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be357ffb52edf24bb1c7e57e02b8601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentClone: {fileID: 110674, guid: 16199caed8a11954abd086fe3884d506, type: 2}
+  segmentClone: {fileID: 161438, guid: 576d50095d4533044b1f43b663555feb, type: 2}
   body: {fileID: 193070}
   color: {r: .158620819, g: 0, b: 1, a: 1}
 --- !u!212 &21202020
@@ -2179,7 +2183,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: segmentClone
+      value: 
+      objectReference: {fileID: 161438, guid: 576d50095d4533044b1f43b663555feb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102586}

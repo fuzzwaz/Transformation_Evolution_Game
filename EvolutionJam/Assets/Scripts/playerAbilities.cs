@@ -16,6 +16,7 @@ public class playerAbilities : MonoBehaviour {
 	public bool p_Block = false;
 	public bool p_Seeking = false;
 	public bool p_Poision = false;
+	public bool p_SpreadShot = false;
 
 	public int p_bodySpikes = 0;
 	
@@ -61,7 +62,7 @@ public class playerAbilities : MonoBehaviour {
 		p_Poision = has;
 	}
 
-	public void abl_BodySpike(int spikes) 
+	public void abl_BodySpike(int spikes) //completed and tested
 	{
 		if (spikes > 0)
 		{
@@ -71,7 +72,9 @@ public class playerAbilities : MonoBehaviour {
 	}
 
 	public void abl_SpreadShot(bool has) 
-	{}
+	{
+		p_SpreadShot = has;
+	}
 
 	public void abl_ExplosiveShot(float explosiveMultiplier)
 	{}

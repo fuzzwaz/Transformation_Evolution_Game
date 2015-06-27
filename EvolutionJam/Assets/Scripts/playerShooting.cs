@@ -59,7 +59,9 @@ public class playerShooting : MonoBehaviour {
 		{
 			if (!shooting && playerShots > 0)
 			{
-				Shoot();
+				Vector2 bulletDirection = new Vector2(aimingReticle.transform.position.x - this.transform.position.x,aimingReticle.transform.position.y - this.transform.position.y);
+				bulletDirection.Normalize();
+				Shoot(bulletDirection);
 			}
 		}
 
@@ -105,7 +107,7 @@ public class playerShooting : MonoBehaviour {
 		this.GetComponent<playerMovement>().decreaseSpeed();
 	}
 
-	void Shoot()
+	void Shoot(Vector2 bulletDirection)
 	{
 		playerAnimation.SetTrigger("Unsquish");
 		squish = false;
@@ -113,8 +115,6 @@ public class playerShooting : MonoBehaviour {
 		GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,this.transform.position,Quaternion.identity);
 		newBullet.GetComponent<bullet>().playerBullet = playerNum;
 		newBullet.GetComponent<SpriteRenderer>().color = colorizer.color;
-		Vector2 bulletDirection = new Vector2(aimingReticle.transform.position.x - this.transform.position.x,aimingReticle.transform.position.y - this.transform.position.y);
-		bulletDirection.Normalize();
 		recoilDirection = bulletDirection * -1;
 		newBullet.GetComponent<Rigidbody2D>().AddForce(bulletDirection * bulletForce);
 		this.GetComponent<Rigidbody2D>().AddForce(recoilDirection * recoilForce,ForceMode2D.Impulse);
