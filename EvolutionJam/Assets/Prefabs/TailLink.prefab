@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connected: {fileID: 0}
-  maxDistance: 1.70000005
+  maxDistance: 2
   catchUpSpeed: .100000001
 --- !u!212 &21284496
 SpriteRenderer:
@@ -78,7 +78,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: maxDistance
-      value: 1.70000005
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
