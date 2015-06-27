@@ -104,6 +104,11 @@ public class playerMovement : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		
+		if(dead)
+		{
+			return;
+		}
 		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * playerSpeed;
 		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * playerSpeed;
 		rb2d.AddForce(new Vector2(horizontalMovement, verticalMovement));
