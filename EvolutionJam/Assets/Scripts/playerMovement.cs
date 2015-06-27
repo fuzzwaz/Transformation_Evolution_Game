@@ -35,13 +35,14 @@ public class playerMovement : MonoBehaviour {
 	private GameObject GM;
 
 	Rigidbody2D rb2d;
+	public Collider2D bodyCollider;
 	public GameObject eyeBrows;
 	public Animator playerAnimation;
 	bool dead = false;
 	public playerShooting shooting;
 	public GameObject tailStack;
-	public AudioClip deathSound;
-	
+	public AudioClip deathSound, dashSound;
+
 	// Use this for initialization
 	void Start () {
 		GM = GameObject.Find ("GameManager");
@@ -70,6 +71,7 @@ public class playerMovement : MonoBehaviour {
 
 		if (Input.GetAxis ("Dash" + playerNum.ToString()) == 1.0f && canDash) 
 		{
+			AudioSource.PlayClipAtPoint(dashSound, Camera.main.transform.position);
 			playerSpeed = dashSpeed;
 			dashDuration -= Time.deltaTime;
 			canDash = false;
@@ -102,6 +104,11 @@ public class playerMovement : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		
+		if(dead)
+		{
+			return;
+		}
 		verticalMovement = Input.GetAxis("Vertical" + playerNum.ToString()) * playerSpeed;
 		horizontalMovement = Input.GetAxis ("Horizontal" + playerNum.ToString()) * playerSpeed;
 		rb2d.AddForce(new Vector2(horizontalMovement, verticalMovement));
@@ -174,6 +181,8 @@ public class playerMovement : MonoBehaviour {
         this.GetComponent<playerAbilities>().UpdatePlayerInfo();
 		Destroy(shooting);
 		Destroy(tailStack);
+		Destroy(bodyCollider);
+		Destroy(rb2d);
 	}
 
 	public void CleanUpDeceasedBody()

@@ -28,6 +28,7 @@ public class playerShooting : MonoBehaviour {
 	public TailStack tailStack;
 	public Animator playerAnimation;
 	Colorizer colorizer;
+	public AudioClip holdShotSound;
 
 	void Awake()
 	{
@@ -51,6 +52,7 @@ public class playerShooting : MonoBehaviour {
 			aimingReticle.color = reticleColor;
 			if(!squish)
 			{
+				AudioSource.PlayClipAtPoint(holdShotSound, Camera.main.transform.position);
 				playerAnimation.SetTrigger("Squish");
 				squish = true;
 			}
