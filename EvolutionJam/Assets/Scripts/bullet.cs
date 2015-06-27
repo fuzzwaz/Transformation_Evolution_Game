@@ -10,6 +10,7 @@ public class bullet : MonoBehaviour {
 	private int seekPlayer = 0;
 	private GameObject seekingPlayer;
 	private GameObject player;
+	public AudioClip shotSound, hitWallSound, pickUpSound;
 	// Use this for initialization
 	void Start () {
 		player = (GameObject) GameObject.Find ("Player" + playerBullet);
@@ -18,6 +19,7 @@ public class bullet : MonoBehaviour {
 		{
 			Debug.Log("Bullet couldn't find the player");
 		}
+		AudioSource.PlayClipAtPoint(shotSound, Camera.main.transform.position);
 	}
 	
 	// Update is called once per frame
@@ -38,6 +40,7 @@ public class bullet : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Block")
 		{
+			AudioSource.PlayClipAtPoint(hitWallSound, Camera.main.transform.position);
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			seekPlayer = 2;
 			canGet = true;
@@ -48,6 +51,7 @@ public class bullet : MonoBehaviour {
 		}
 		else if (col.gameObject.tag == "Player" && canGet && pickedUp == false)
 		{
+			AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);
 			Destroy(this.gameObject);
 			col.gameObject.GetComponentInParent<playerShooting>().BulletPickedUp();
 			pickedUp = true;

@@ -22,6 +22,7 @@ public class playerShooting : MonoBehaviour {
 	private bool recoiled = false;
 	private Vector2 recoilDirection;
 	private bool released = false;
+	bool squish = false;
 
 	public TailStack tailStack;
 	public Animator playerAnimation;
@@ -47,6 +48,11 @@ public class playerShooting : MonoBehaviour {
 		{
 			released = true;
 			aimingReticle.color = reticleColor;
+			if(!squish)
+			{
+				playerAnimation.SetTrigger("Squish");
+				squish = true;
+			}
 		}
 
 		if (Input.GetAxis ("Fire" + playerNum.ToString()) < 0.5 && released == true && !shooting)
@@ -82,7 +88,9 @@ public class playerShooting : MonoBehaviour {
 		else
 		{
 			if (released == false)
-			{aimingReticle.color = aiming;}
+			{
+				aimingReticle.color = aiming;
+			}
 			aimingReticle.enabled = true;
 			aimingReticle.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x + Input.GetAxis ("AimHorz" + playerNum.ToString()) * 3, this.transform.position.y + Input.GetAxis ("AimVert" + playerNum.ToString()) * 3);
 		}
@@ -99,7 +107,8 @@ public class playerShooting : MonoBehaviour {
 
 	void Shoot()
 	{
-		playerAnimation.SetTrigger("Shoot");
+		playerAnimation.SetTrigger("Unsquish");
+		squish = false;
 		tailStack.RemoveSegment();
 		GameObject newBullet = (GameObject) GameObject.Instantiate(bullet,this.transform.position,Quaternion.identity);
 		newBullet.GetComponent<bullet>().playerBullet = playerNum;

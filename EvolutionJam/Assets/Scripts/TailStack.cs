@@ -24,12 +24,12 @@ public class TailStack : MonoBehaviour {
 	{
 		GameObject g = (GameObject)Instantiate(segmentClone, body.transform.position, Quaternion.identity);
 		g.transform.parent = transform;
-		g.GetComponent<DistanceJoint2D>().connectedBody = body.GetComponent<Rigidbody2D>();
+		g.GetComponent<TailLink>().connected = body;
 		g.GetComponent<SpriteRenderer>().color = color;
 
 		if(segments.Count > 0)
 		{
-			segments.Peek().GetComponent<DistanceJoint2D>().connectedBody = g.GetComponent<Rigidbody2D>();
+			segments.Peek().GetComponent<TailLink>().connected = g;
 		}
 
 		segments.Push(g);
@@ -46,7 +46,7 @@ public class TailStack : MonoBehaviour {
 	 	Destroy(segments.Pop());
 		if(segments.Count > 0)
 		{
-			segments.Peek().GetComponent<DistanceJoint2D>().connectedBody = body.GetComponent<Rigidbody2D>();
+			segments.Peek().GetComponent<TailLink>().connected = body;
 		}
 	}
 }
