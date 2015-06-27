@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 04b2146e9ce15454ea88c553c338bba9
-timeCreated: 1435269114
+timeCreated: 1435424781
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -43,6 +43,20 @@ TextureImporter:
     21300072: amoeba stuff_36
     21300074: amoeba stuff_37
     21300076: amoeba stuff_38
+    21300078: amoeba stuff_39
+    21300080: amoeba stuff_40
+    21300082: amoeba stuff_41
+    21300084: amoeba stuff_42
+    21300086: amoeba stuff_43
+    21300088: amoeba stuff_44
+    21300090: amoeba stuff_45
+    21300092: amoeba stuff_46
+    21300094: amoeba stuff_47
+    21300096: amoeba stuff_48
+    21300098: amoeba stuff_49
+    21300100: amoeba stuff_50
+    21300102: amoeba stuff_51
+    21300104: amoeba stuff_52
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -128,56 +142,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_4
-      rect:
-        serializedVersion: 2
-        x: 2303
-        y: 3438
-        width: 254
-        height: 254
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_5
-      rect:
-        serializedVersion: 2
-        x: 2664
-        y: 3444
-        width: 254
-        height: 178
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_6
-      rect:
-        serializedVersion: 2
-        x: 2948
-        y: 3409
-        width: 192
-        height: 252
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_7
-      rect:
-        serializedVersion: 2
-        x: 3177
-        y: 3479
-        width: 256
-        height: 178
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_8
-      rect:
-        serializedVersion: 2
-        x: 3501
-        y: 3422
-        width: 191
-        height: 253
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_9
       rect:
         serializedVersion: 2
@@ -185,66 +149,6 @@ TextureImporter:
         y: 2807
         width: 84
         height: 439
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_10
-      rect:
-        serializedVersion: 2
-        x: 2333
-        y: 3097
-        width: 201
-        height: 200
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_11
-      rect:
-        serializedVersion: 2
-        x: 2607
-        y: 3107
-        width: 97
-        height: 93
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_12
-      rect:
-        serializedVersion: 2
-        x: 2818
-        y: 3105
-        width: 191
-        height: 178
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_13
-      rect:
-        serializedVersion: 2
-        x: 3066
-        y: 3175
-        width: 178
-        height: 115
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_14
-      rect:
-        serializedVersion: 2
-        x: 3275
-        y: 3192
-        width: 178
-        height: 115
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_15
-      rect:
-        serializedVersion: 2
-        x: 3544
-        y: 3118
-        width: 178
-        height: 185
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,106 +172,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_18
-      rect:
-        serializedVersion: 2
-        x: 2392
-        y: 2667
-        width: 359
-        height: 356
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_19
-      rect:
-        serializedVersion: 2
-        x: 2831
-        y: 2857
-        width: 117
-        height: 180
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_20
-      rect:
-        serializedVersion: 2
-        x: 3230
-        y: 2973
-        width: 112
-        height: 99
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_21
-      rect:
-        serializedVersion: 2
-        x: 3440
-        y: 2959
-        width: 98
-        height: 107
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_22
-      rect:
-        serializedVersion: 2
-        x: 3614
-        y: 2867
-        width: 115
-        height: 179
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_23
-      rect:
-        serializedVersion: 2
-        x: 2833
-        y: 2636
-        width: 115
-        height: 180
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_24
-      rect:
-        serializedVersion: 2
-        x: 3209
-        y: 2785
-        width: 98
-        height: 112
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_25
-      rect:
-        serializedVersion: 2
-        x: 3420
-        y: 2764
-        width: 109
-        height: 96
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_26
-      rect:
-        serializedVersion: 2
-        x: 3631
-        y: 2651
-        width: 115
-        height: 180
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_27
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 2136
-        width: 390
-        height: 396
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_28
       rect:
         serializedVersion: 2
@@ -375,46 +179,6 @@ TextureImporter:
         y: 2288
         width: 473
         height: 276
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_29
-      rect:
-        serializedVersion: 2
-        x: 2835
-        y: 2362
-        width: 185
-        height: 191
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_30
-      rect:
-        serializedVersion: 2
-        x: 3092
-        y: 2366
-        width: 179
-        height: 116
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_31
-      rect:
-        serializedVersion: 2
-        x: 3347
-        y: 2366
-        width: 178
-        height: 115
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: amoeba stuff_32
-      rect:
-        serializedVersion: 2
-        x: 3588
-        y: 2371
-        width: 191
-        height: 178
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,7 +190,7 @@ TextureImporter:
         width: 1367
         height: 1690
       alignment: 9
-      pivot: {x: .665951431, y: .488254488}
+      pivot: {x: .641678572, y: .488884717}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: amoeba stuff_34
       rect:
@@ -441,7 +205,7 @@ TextureImporter:
     - name: amoeba stuff_35
       rect:
         serializedVersion: 2
-        x: 1957
+        x: 1951
         y: 601
         width: 465
         height: 652
@@ -451,7 +215,7 @@ TextureImporter:
     - name: amoeba stuff_36
       rect:
         serializedVersion: 2
-        x: 2442
+        x: 2445
         y: 689
         width: 446
         height: 508
@@ -477,6 +241,286 @@ TextureImporter:
         height: 919
       alignment: 4
       pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_4
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 3485
+        width: 231
+        height: 235
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_5
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 3305
+        width: 389
+        height: 387
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_6
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 3362
+        width: 392
+        height: 271
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_7
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 3312
+        width: 293
+        height: 386
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_14
+      rect:
+        serializedVersion: 2
+        x: 3011
+        y: 3035
+        width: 270
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_15
+      rect:
+        serializedVersion: 2
+        x: 3422
+        y: 2922
+        width: 270
+        height: 283
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_22
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 2901
+        width: 290
+        height: 272
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_23
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 3020
+        width: 272
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_27
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2562
+        width: 555
+        height: 382
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_29
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 2520
+        width: 174
+        height: 272
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_30
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 2770
+        width: 163
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_31
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 2747
+        width: 149
+        height: 164
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_32
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 2736
+        width: 167
+        height: 149
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_39
+      rect:
+        serializedVersion: 2
+        x: 3526
+        y: 2538
+        width: 178
+        height: 272
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_40
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 2086
+        width: 726
+        height: 433
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_41
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 2355
+        width: 359
+        height: 352
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_42
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 2363
+        width: 203
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_43
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 2435
+        width: 97
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_44
+      rect:
+        serializedVersion: 2
+        x: 2764
+        y: 2516
+        width: 146
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_45
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 2240
+        width: 292
+        height: 387
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_46
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 2184
+        width: 179
+        height: 271
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_47
+      rect:
+        serializedVersion: 2
+        x: 2697
+        y: 2177
+        width: 391
+        height: 275
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_48
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 2205
+        width: 179
+        height: 272
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_49
+      rect:
+        serializedVersion: 2
+        x: 2408
+        y: 1760
+        width: 282
+        height: 291
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_50
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 1768
+        width: 271
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_51
+      rect:
+        serializedVersion: 2
+        x: 3120
+        y: 1766
+        width: 272
+        height: 176
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_52
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1775
+        width: 291
+        height: 271
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 2979
+        width: 425
+        height: 427
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
