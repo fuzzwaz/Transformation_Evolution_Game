@@ -2,14 +2,17 @@
 using System.Collections;
 
 public class bullet : MonoBehaviour {
+	
 
 	public int playerBullet = 1;
+	private bool notExploded = true;
 	private float timer = 0.0f;
 	private bool canGet = false;
 	private bool pickedUp = false;
 	private int seekPlayer = 0;
 	private GameObject seekingPlayer;
 	private GameObject player;
+	public GameObject explosion;
 	public AudioClip shotSound, hitWallSound, pickUpSound;
 	// Use this for initialization
 	void Start () {
@@ -34,10 +37,26 @@ public class bullet : MonoBehaviour {
 
 			seekPlayer = 2;
 		}
+
+
+
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
+
+		if (player.GetComponent<playerAbilities>().p_explosiveShot > 0.0f)
+		{
+			if (notExploded)
+			{
+				GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
+				newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
+				newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
+				                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
+                                                				newExplosion.transform.localScale.z);
+				notExploded = false;
+			}
+		}
 		if (col.gameObject.tag == "Block")
 		{
 			AudioSource.PlayClipAtPoint(hitWallSound, Camera.main.transform.position);
@@ -47,12 +66,22 @@ public class bullet : MonoBehaviour {
 		}
 		else if (col.gameObject.tag == "deadBullet")
 		{
-			Destroy(this.gameObject);
+			killBullet();
+		}
+		else if (col.gameObject.tag == "Bullet")
+		{
+			if (col.gameObject.GetComponent<bullet>().canGet)
+			{
+				AudioSource.PlayClipAtPoint(hitWallSound, Camera.main.transform.position);
+				this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+				seekPlayer = 2;
+				canGet = true;
+			}
 		}
 		else if (col.gameObject.tag == "Player" && canGet && pickedUp == false)
 		{
 			AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);
-			Destroy(this.gameObject);
+			killBullet();
 			col.gameObject.GetComponentInParent<playerShooting>().BulletPickedUp();
 			pickedUp = true;
 		}
@@ -62,7 +91,7 @@ public class bullet : MonoBehaviour {
 			{
 				if (this.gameObject != null)
 				{
-					Destroy(this.gameObject);
+					killBullet();
 				}
 			
 				//Ability update
@@ -79,6 +108,7 @@ public class bullet : MonoBehaviour {
 				}
 			}
 		}
+
 	}
 
 	void OnCollisionStay2D (Collision2D col)
@@ -90,7 +120,7 @@ public class bullet : MonoBehaviour {
 		}
 		else if (col.gameObject.tag == "deadBullet")
 		{
-			Destroy(this.gameObject);
+			killBullet();
 		}
 
 	}
@@ -110,5 +140,10 @@ public class bullet : MonoBehaviour {
 			seekPlayer = 1;
 			seekingPlayer = col.gameObject;
 		}
+	}
+
+	void killBullet()
+	{
+		Destroy (this.gameObject);
 	}
 }

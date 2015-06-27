@@ -160,7 +160,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 474458, guid: b084fb5b312294d2484e12a0b634965a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.5
+      value: -21.2999992
       objectReference: {fileID: 0}
     - target: {fileID: 474458, guid: b084fb5b312294d2484e12a0b634965a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2102,6 +2102,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 134960, guid: b084fb5b312294d2484e12a0b634965a, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457324, guid: b084fb5b312294d2484e12a0b634965a, type: 2}
+      propertyPath: poisionDelay
+      value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468614, guid: b084fb5b312294d2484e12a0b634965a, type: 2}
+      propertyPath: p_explosiveShot
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

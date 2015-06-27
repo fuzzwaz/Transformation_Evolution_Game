@@ -41,7 +41,7 @@ public class playerMovement : MonoBehaviour {
 	public playerShooting shooting;
 	public GameObject tailStack;
 	public AudioClip deathSound;
-
+	
 	// Use this for initialization
 	void Start () {
 		GM = GameObject.Find ("GameManager");
