@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WhaleMovement : MonoBehaviour {
 
-	Vector3 startPosition;
+	public Transform startPosition;
 	public float _velocity = 1.0f;
 	public Transform finalPosition;
 	public Transform stageTop;
@@ -13,7 +13,6 @@ public class WhaleMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		startPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -24,7 +23,7 @@ public class WhaleMovement : MonoBehaviour {
 
 		if (transform.position.x < finalPosition.position.x)
 		{
-			transform.position = startPosition;
+			transform.position = startPosition.position;
 			float whaleHeight = Random.Range(stageBottom.position.y, stageTop.position.y);
 			Vector3 whalePosition = new Vector3(transform.position.x, whaleHeight, transform.position.z);
 			transform.position = whalePosition;
