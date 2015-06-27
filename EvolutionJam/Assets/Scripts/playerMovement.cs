@@ -40,7 +40,7 @@ public class playerMovement : MonoBehaviour {
 	bool dead = false;
 	public playerShooting shooting;
 	public GameObject tailStack;
-	public AudioClip deathSound;
+	public AudioClip deathSound, dashSound;
 
 	// Use this for initialization
 	void Start () {
@@ -70,6 +70,7 @@ public class playerMovement : MonoBehaviour {
 
 		if (Input.GetAxis ("Dash" + playerNum.ToString()) == 1.0f && canDash) 
 		{
+			AudioSource.PlayClipAtPoint(dashSound, Camera.main.transform.position);
 			playerSpeed = dashSpeed;
 			dashDuration -= Time.deltaTime;
 			canDash = false;
