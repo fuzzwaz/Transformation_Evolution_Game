@@ -277,25 +277,41 @@ namespace FuzzyEvolutions
          #endregion
       }
 
-      public void RunWithInputs(playerInfo[] playerInformation)
+      public void RunWithInputs(playerInfo[] playerInformations)
       {
-         MakeInputVariableValues(playerInformation);
-         var selectionLabel = EvaluateRules();
-
-         foreach (var output in _outputs)
+         foreach (var playerInformation in playerInformations)
          {
-            Console.WriteLine(output.Label + ": " + output.Centroid);
+            if (!playerInformation.playerdied)
+            {
+               continue;
+            }
+
+            MakeInputVariableValues(playerInformation);
+            var selectionLabel = EvaluateRules();
+
+            foreach (var output in _outputs)
+            {
+               Console.WriteLine(output.Label + ": " + output.Centroid);
+            }
+
+            Console.WriteLine("\nSelection: " + selectionLabel);
+
+            _inputVariableValues.Clear();
+            ResetAllOutputs();
+
+            SendSelection(playerInformation.playerNum, selectionLabel);
          }
-
-         Console.WriteLine("\nSelection: " + selectionLabel);
-
-         ResetAllOutputs();
       }
 
-      private void MakeInputVariableValues(playerInfo[] playerInformation)
+      private void MakeInputVariableValues(playerInfo playerInformation)
       {
-         _inputVariableValues.Add(Labels.InputVariable_Dashes, 3);
-         _inputVariableValues.Add(Labels.InputVariable_BulletsShot, 8);
+         _inputVariableValues.Add(Labels.InputVariable_DeathRange, (int)playerInformation.deathRange);
+         _inputVariableValues.Add(Labels.InputVariable_BulletsShot, playerInformation.bulletsShot);
+         _inputVariableValues.Add(Labels.InputVariable_Dashes, playerInformation.dashesMade);
+         _inputVariableValues.Add(Labels.InputVariable_BulletHits, playerInformation.bulletHits);
+         _inputVariableValues.Add(Labels.InputVariable_DashHits, playerInformation.dashingHits);
+         _inputVariableValues.Add(Labels.InputVariable_Surroundings, playerInformation.surroundingObjects);
+         _inputVariableValues.Add(Labels.InputVariable_LengthOfLife, (int)playerInformation.lengthOfLife);
       }
 
       private string EvaluateRules()
@@ -324,6 +340,82 @@ namespace FuzzyEvolutions
          foreach (var output in _outputs)
          {
             output.Reset();
+         }
+      }
+
+      private void SendSelection(int playerNumber, string selectionLabel)
+      {
+         if (selectionLabel == Labels.Output_Block)
+         {
+            // Block selected.
+         }
+         else if (selectionLabel == Labels.Output_SeekingShot)
+         {
+            // SeekingShot selected.
+         }
+         else if (selectionLabel == Labels.Output_PoisonGas)
+         {
+            // PoisonGas selected.
+         }
+         else if (selectionLabel == Labels.Output_SpikeOnBody)
+         {
+            // SpikeOnBody selected.
+         }
+         else if (selectionLabel == Labels.Output_SpreadShot)
+         {
+            // SpreadShot selected.
+         }
+         else if (selectionLabel == Labels.Output_ExplosiveShot)
+         {
+            // ExplosiveShot selected.
+         }
+         else if (selectionLabel == Labels.Output_BouncingShot)
+         {
+            // BouncingShot selected.
+         }
+         else if (selectionLabel == Labels.Output_Blink)
+         {
+            // Blink selected.
+         }
+         else if (selectionLabel == Labels.Output_PiercingShot)
+         {
+            // PiercingShot selected.
+         }
+         else if (selectionLabel == Labels.Output_LongerDash)
+         {
+            // LongerDash selected.
+         }
+         else if (selectionLabel == Labels.Output_FasterDash)
+         {
+            // FasterDash selected.
+         }
+         else if (selectionLabel == Labels.Output_MoreAmmo)
+         {
+            // MoreAmmo selected.
+         }
+         else if (selectionLabel == Labels.Output_FasterBullets)
+         {
+            // FasterBullets selected.
+         }
+         else if (selectionLabel == Labels.Output_LargerBullets)
+         {
+            // LargerBullets selected.
+         }
+         else if (selectionLabel == Labels.Output_GrowingDash)
+         {
+            // GrowingDash selected.
+         }
+         else if (selectionLabel == Labels.Output_SpikesWhenDashing)
+         {
+            // SpikesWhenDashing selected.
+         }
+         else if (selectionLabel == Labels.Output_BlackHoleShot)
+         {
+            // BlackHoleShot selected.
+         }
+         else if (selectionLabel == Labels.Output_FasterMovement)
+         {
+            // FasterMovement selected.
          }
       }
    }
