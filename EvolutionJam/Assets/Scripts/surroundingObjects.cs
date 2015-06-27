@@ -13,7 +13,7 @@ public class surroundingObjects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<playerAbilities>().surroundingObjects = objectCount;
+		this.gameObject.transform.parent.GetComponent<playerAbilities>().surroundingObjects = objectCount;
 	}
 
 	void OnTriggerEnter2D (Collider2D col)

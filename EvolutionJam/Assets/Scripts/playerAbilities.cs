@@ -11,9 +11,17 @@ public class playerAbilities : MonoBehaviour {
 	public int surroundingObjects = 0;
 	public float deathRange = 0.0f;
 	public float lengthOfLife = 0.0f;
+
+	//Current Abilities
+	public bool p_Block = false;
+	public bool p_Seeking = false;
+	public bool p_Poision = false;
 	
 	private int playerNumID;
 	private GameObject gameManager;
+
+
+
 	// Use this for initialization
 	void Start () {
 		playerNumID = this.GetComponent<playerMovement>().playerNum - 1;
@@ -36,59 +44,63 @@ public class playerAbilities : MonoBehaviour {
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].dashingHits = dashingHits;
 	}
 
-	public void abl_Block()
+	public void abl_Block(bool has) //complete and tested
 	{
-
+		p_Block = has;
 	}
 
-	public void abl_SeekingShot()
+	public void abl_SeekingShot(bool has) //complete and tested 
+	{
+		p_Seeking = has;
+	}
+
+	public void abl_PoisonGas(bool has) //complete and tested
+	{
+		p_Poision = has;
+	}
+
+	public void abl_BodySpike(int spikes) 
 	{}
 
-	public void abl_PoisonGas()
+	public void abl_SpreadShot(bool has) 
 	{}
 
-	public void abl_BodySpike()
+	public void abl_ExplosiveShot(float explosiveMultiplier)
 	{}
 
-	public void abl_SpreadShot()
+	public void abl_BouncingShot(float bounces) 
 	{}
 
-	public void abl_ExplosiveShot()
+	public void abl_Blink(bool has)
 	{}
 
-	public void abl_BouncingShot()
+	public void abl_PiercingShot(bool has)
 	{}
 
-	public void abl_Blink()
+	public void abl_LongerDash(float additionalSeconds) 
 	{}
 
-	public void abl_PiercingShot()
+	public void abl_FasterDash(float seconds) 
 	{}
 
-	public void abl_LongerDash()
+	public void abl_MoreAmmo(int additionalBullets)
 	{}
 
-	public void abl_FasterDash()
+	public void abl_FasterShot(float seconds) 
 	{}
 
-	public void abl_MoreAmmo()
+	public void abl_LargerShot(float sizeMultiplier) 
 	{}
 
-	public void abl_FasterShot()
+	public void abl_GrowingDash(float sizeMultiplier) 
 	{}
 
-	public void abl_LargerShot()
+	public void abl_SpikingDash(bool has)
 	{}
 
-	public void abl_GrowindDash()
+	public void abl_GravityShot(float gravityMultiplier)
 	{}
 
-	public void abl_SpikingDash()
-	{}
-
-	public void abl_GravityShot()
-	{}
-
-	public void abl_FasterMovement()
+	public void abl_FasterMovement(float speedmultplier)
 	{}
 }

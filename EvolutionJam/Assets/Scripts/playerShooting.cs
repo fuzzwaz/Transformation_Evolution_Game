@@ -44,7 +44,7 @@ public class playerShooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetAxis ("Fire" + playerNum.ToString()) >= 0.9f)
+		if (Input.GetAxis ("Fire" + playerNum.ToString()) >= 0.9f && playerShots > 0)
 		{
 			released = true;
 			aimingReticle.color = reticleColor;
