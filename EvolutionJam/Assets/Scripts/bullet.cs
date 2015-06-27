@@ -42,7 +42,10 @@ public class bullet : MonoBehaviour {
 			seekPlayer = 2;
 			canGet = true;
 		}
-
+		else if (col.gameObject.tag == "deadBullet")
+		{
+			Destroy(this.gameObject);
+		}
 		else if (col.gameObject.tag == "Player" && canGet && pickedUp == false)
 		{
 			Destroy(this.gameObject);
@@ -77,6 +80,10 @@ public class bullet : MonoBehaviour {
 		{
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			canGet = true;
+		}
+		else if (col.gameObject.tag == "deadBullet")
+		{
+			Destroy(this.gameObject);
 		}
 
 	}

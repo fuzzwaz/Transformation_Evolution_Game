@@ -16,6 +16,8 @@ public class playerAbilities : MonoBehaviour {
 	public bool p_Block = false;
 	public bool p_Seeking = false;
 	public bool p_Poision = false;
+
+	public int p_bodySpikes = 0;
 	
 	private int playerNumID;
 	private GameObject gameManager;
@@ -60,7 +62,13 @@ public class playerAbilities : MonoBehaviour {
 	}
 
 	public void abl_BodySpike(int spikes) 
-	{}
+	{
+		if (spikes > 0)
+		{
+			p_bodySpikes = 1;
+			this.transform.FindChild("Spike").gameObject.SetActive(true);
+		}
+	}
 
 	public void abl_SpreadShot(bool has) 
 	{}

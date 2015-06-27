@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\TailStack.cs" />
      <Compile Include="Assets\Scripts\WhaleMovement.cs" />
+     <Compile Include="Assets\Scripts\bodySpike.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\dashAttack.cs" />
      <Compile Include="Assets\Scripts\playerAbilities.cs" />
