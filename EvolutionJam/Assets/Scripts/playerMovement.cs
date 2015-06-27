@@ -36,6 +36,7 @@ public class playerMovement : MonoBehaviour {
 	bool dead = false;
 	public playerShooting shooting;
 	public GameObject tailStack;
+	public AudioClip deathSound;
 
 	// Use this for initialization
 	void Start () {
@@ -169,6 +170,7 @@ public class playerMovement : MonoBehaviour {
 
 	public void killed()
 	{
+		AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position);
 		dead = true;
 		playerAnimation.SetTrigger("Die");
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
