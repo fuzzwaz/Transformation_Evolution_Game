@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f4e9b667ec8fa464f8e903658e4fae98
-timeCreated: 1435461613
+timeCreated: 1435520128
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -35,6 +35,9 @@ TextureImporter:
     21300056: FullAmoeba_28
     21300058: FullAmoeba_29
     21300060: FullAmoeba_30
+    21300062: FullAmoeba_31
+    21300064: FullAmoeba_32
+    21300066: FullAmoeba_33
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -387,6 +390,36 @@ TextureImporter:
         y: 793
         width: 214
         height: 210
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_31
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 673
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_32
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 612
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FullAmoeba_33
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 680
+        width: 75
+        height: 45
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
