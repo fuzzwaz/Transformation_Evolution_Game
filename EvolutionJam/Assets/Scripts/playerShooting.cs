@@ -142,4 +142,14 @@ public class playerShooting : MonoBehaviour {
 	        this.GetComponent<playerAbilities>().bulletsShot++;
 		}
 	}
+
+	public void increaseAmmoCount (int increase)
+	{
+		playerShots += increase;	
+	}
+
+	public void increaseShotSpeed (float increase)
+	{
+		bulletForce += increase;	
+	}
 }
