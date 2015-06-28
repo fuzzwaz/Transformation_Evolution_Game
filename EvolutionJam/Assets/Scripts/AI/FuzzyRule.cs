@@ -6,7 +6,7 @@ namespace FuzzyEvolutions
 {
    public class FuzzyRule
    {
-      public delegate bool Constraint();
+      public delegate bool Constraint(Player player);
 
       private readonly IInputExpression _inputExpression;
       private readonly IDictionary<FuzzyOutput, string> _outputExpressions;
@@ -19,9 +19,9 @@ namespace FuzzyEvolutions
          _constraint = constraint;
       }
 
-      public void Evaluate(IDictionary<string, int> inputVariableValues)
+      public void Evaluate(IDictionary<string, int> inputVariableValues, Player player)
       {
-         if (_constraint != null && !_constraint())
+         if (_constraint != null && !_constraint(player))
          {
             return;
          }
