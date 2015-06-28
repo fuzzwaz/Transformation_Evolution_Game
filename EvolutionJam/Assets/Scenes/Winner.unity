@@ -4852,8 +4852,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1465581026}
   m_RootOrder: 0
-  m_AnchorMin: {x: .200000003, y: .5}
-  m_AnchorMax: {x: .800000012, y: .800000012}
+  m_AnchorMin: {x: .100000001, y: .5}
+  m_AnchorMax: {x: .899999976, y: .699999988}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -4879,10 +4879,12 @@ MonoBehaviour:
     m_MaxSize: 100
     m_Alignment: 4
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: PLAYER
+  m_Text: 'PLAYER 10
+
+'
 --- !u!222 &1667283776
 CanvasRenderer:
   m_ObjectHideFlags: 0
