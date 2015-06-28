@@ -3,7 +3,7 @@ using System.Collections;
 
 public class poisionGas : MonoBehaviour {
 
-
+	public Animator gasAnimator;
 	public float timer = 5.0f;
 	public float activeTimer = 0.3f;
 	public int playerOwned = 0;
@@ -19,8 +19,8 @@ public class poisionGas : MonoBehaviour {
 	void Update () {
 	
 		if (timer < 0.0f)
-		{
-			Destroy (this.gameObject);
+		{ 
+			gasAnimator.SetTrigger("Fade");
 		}
 
 		timer -= Time.deltaTime;
@@ -84,5 +84,10 @@ public class poisionGas : MonoBehaviour {
 				col.gameObject.GetComponent<playerMovement>().killed();
 			}
 		}
+	}
+
+	public void CleanUp()
+	{
+		Destroy(gameObject);
 	}
 }

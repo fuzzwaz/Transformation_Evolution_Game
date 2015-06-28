@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour {
 	private bool isActive = true;
 
 	public float explosionTimer = 0.2f;
+	public Collider2D hitBox;
 
 	private int playerNum;
 	// Use this for initialization
@@ -29,7 +30,7 @@ public class Explosion : MonoBehaviour {
 		explosionTimer -= Time.deltaTime;
 		if (explosionTimer < 0.0f)
 		{
-			Destroy(this.gameObject);
+			Destroy(hitBox);
 		}
 	}
 
@@ -74,5 +75,10 @@ public class Explosion : MonoBehaviour {
 	public void setPlayerNum (int num)
 	{
 		playerNum = num;
+	}
+
+	public void CleanUp()
+	{
+		Destroy(gameObject);
 	}
 }
