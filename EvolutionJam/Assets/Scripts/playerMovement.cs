@@ -43,23 +43,57 @@ public class playerMovement : MonoBehaviour {
 	public GameObject tailStack;
 	public AudioClip deathSound, dashSound;
 
+	private int growth = 0;
+	private Vector3 currentScale;
+
 	// Use this for initialization
 	void Start () {
 		GM = GameObject.Find ("GameManager");
 		rb2d = GetComponent<Rigidbody2D>();
 		poisionDelayTemp = poisionDelay;
+		savedDashDuration = dashDuration;
+		savedDashDelay = dashDelay;
+		savedPlayerSpeed = playerSpeed;
+		currentScale = this.transform.parent.transform.localScale;
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(dead)
 		{
 			return;
 		}
 
-        lengthOfLife += Time.deltaTime;
-		if (dashDuration < savedDashDuration)
+
+		if (isDashing  && growth == 0)
+		{
+			if (this.GetComponent<playerAbilities>().p_GrowingDash > 0.0f)
+			{
+				this.transform.parent.transform.localScale = new Vector3(this.transform.parent.transform.localScale.x + this.GetComponent<playerAbilities>().p_GrowingDash,
+			                                        this.transform.parent.transform.localScale.y + this.GetComponent<playerAbilities>().p_GrowingDash,
+			                                       this.transform.parent.transform.localScale.z);
+			}
+
+			this.transform.FindChild("DashSpikes").gameObject.SetActive(this.GetComponent<playerAbilities>().p_SpikingDash);
+			growth = 1;
+		}
+		
+		if (!isDashing && growth == 1)
+		{
+			if (this.GetComponent<playerAbilities>().p_GrowingDash > 0.0f)
+			{
+				this.transform.parent.transform.localScale = currentScale;
+			}
+
+			this.transform.FindChild("DashSpikes").gameObject.SetActive(false);
+			growth = 0;
+		}
+		
+		lengthOfLife += Time.deltaTime;
+		//if (dashDuration < savedDashDuration)
+		if (isDashing)
 		{dashDuration -= Time.deltaTime;}
 		if (dashDuration < 0.0f)
 		{
@@ -82,7 +116,7 @@ public class playerMovement : MonoBehaviour {
             this.GetComponent<playerAbilities>().dashesMade++;
 		}
 
-		if (canDash == false)
+		if (canDash == false && isDashing == false)
 		{dashDelay -= Time.deltaTime;}
 		if (dashDelay < 0.0f)
 		{
@@ -189,6 +223,19 @@ public class playerMovement : MonoBehaviour {
 		Destroy(tailStack);
 		Destroy(bodyCollider);
 		Destroy(rb2d);
+	}
+
+	public void increaseDashDuration (float increase)
+	{
+		dashDuration += increase;
+		savedDashDuration = dashDuration;
+
+	}
+
+	public void increaseDashSpeed (float increase)
+	{
+		dashSpeed += increase;
+		
 	}
 
 	public void CleanUpDeceasedBody()

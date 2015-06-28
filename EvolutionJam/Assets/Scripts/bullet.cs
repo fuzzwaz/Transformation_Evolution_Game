@@ -14,6 +14,7 @@ public class bullet : MonoBehaviour {
 	private GameObject player;
 	public GameObject explosion;
 	public AudioClip shotSound, hitWallSound, pickUpSound;
+	public int bounces = 0;
 	// Use this for initialization
 	void Start () {
 		player = (GameObject) GameObject.Find ("Player" + playerBullet);
@@ -22,7 +23,15 @@ public class bullet : MonoBehaviour {
 		{
 			Debug.Log("Bullet couldn't find the player");
 		}
+
+		if (player.GetComponent<playerAbilities>().p_LargerShot > 0.0f)
+		{
+			this.transform.localScale = new Vector3(this.transform.localScale.x * player.GetComponent<playerAbilities>().p_LargerShot,
+			                                                this.transform.localScale.y * player.GetComponent<playerAbilities>().p_LargerShot,
+			                                                this.transform.localScale.z);
+		}
 		AudioSource.PlayClipAtPoint(shotSound, Camera.main.transform.position);
+		bounces = player.GetComponent<playerAbilities>().p_Bouncing;
 	}
 	
 	// Update is called once per frame
@@ -60,9 +69,19 @@ public class bullet : MonoBehaviour {
 		if (col.gameObject.tag == "Block")
 		{
 			AudioSource.PlayClipAtPoint(hitWallSound, Camera.main.transform.position);
-			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-			seekPlayer = 2;
-			canGet = true;
+			Vector2 reflection = col.contacts[0].normal;
+
+			if (bounces > 0)
+			{
+				bounces--;
+				this.GetComponent<Rigidbody2D>().AddForce(reflection * player.GetComponent<playerShooting>().bulletForce);
+			}
+			else
+			{
+				this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+				seekPlayer = 2;
+				canGet = true;
+			}
 		}
 		else if (col.gameObject.tag == "deadBullet")
 		{
@@ -89,7 +108,7 @@ public class bullet : MonoBehaviour {
 		{
 			if (col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
 			{
-				if (this.gameObject != null)
+				if (this.gameObject != null && player.GetComponent<playerAbilities>().p_PiercingShot == false)
 				{
 					killBullet();
 				}
@@ -113,7 +132,7 @@ public class bullet : MonoBehaviour {
 
 	void OnCollisionStay2D (Collision2D col)
 	{
-		if (col.gameObject.tag == "Block")
+		if (col.gameObject.tag == "Block" && bounces == 0)
 		{
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 			canGet = true;

@@ -17,10 +17,19 @@ public class playerAbilities : MonoBehaviour {
 	public bool p_Seeking = false;
 	public bool p_Poision = false;
 	public bool p_SpreadShot = false;
+	public bool p_PiercingShot = false;
+	public bool p_SpikingDash = false;
 
-	public int p_bodySpikes = 0;
+	public int p_BodySpikes = 0;
+	public int p_Bouncing = 0;
+	public int p_MoreBullets = 0;
 
 	public float p_explosiveShot = 0.0f;
+	public float p_LongerDash = 0.0f;
+	public float p_FasterDash = 0.0f;
+	public float p_FasterShot = 0.0f;
+	public float p_LargerShot = 0.0f;
+	public float p_GrowingDash = 0.0f;
 	
 	private int playerNumID;
 	private GameObject gameManager;
@@ -68,7 +77,7 @@ public class playerAbilities : MonoBehaviour {
 	{
 		if (spikes > 0)
 		{
-			p_bodySpikes = 1;
+			p_BodySpikes = 1;
 			this.transform.FindChild("Spike").gameObject.SetActive(true);
 		}
 	}
@@ -83,39 +92,72 @@ public class playerAbilities : MonoBehaviour {
 		p_explosiveShot = explosiveMultiplier;
 	}
 
-	public void abl_BouncingShot(float bounces) 
-	{}
+	public void abl_BouncingShot(int bounces) //completed and tested
+	{
+		p_Bouncing = bounces;
+	}
 
-	public void abl_Blink(bool has)
-	{}
+	public void abl_Blink(bool has) //remove?
+	{
+		//print ("BLINK IS REMOVED");
+	}
 
-	public void abl_PiercingShot(bool has)
-	{}
+	public void abl_PiercingShot(bool has) //completed and tested
+	{
+		p_PiercingShot = has;
+	}
 
-	public void abl_LongerDash(float additionalSeconds) 
-	{}
+	public void abl_LongerDash(float additionalSeconds)  //completed and tested
+	{
+		p_LongerDash = additionalSeconds;
+		this.GetComponent<playerMovement>().increaseDashDuration(p_LongerDash);
+	}
 
-	public void abl_FasterDash(float seconds) 
-	{}
+	public void abl_FasterDash(float seconds) //completed and tested
+	{
+		p_FasterDash = seconds; 
+		this.GetComponent<playerMovement>().increaseDashSpeed(p_FasterDash);
+	}
 
-	public void abl_MoreAmmo(int additionalBullets)
-	{}
+	public void abl_MoreAmmo(int additionalBullets) //completed and tested
+	{
+		p_MoreBullets = additionalBullets;
+		this.GetComponent<playerShooting>().increaseAmmoCount(p_MoreBullets);
+		for (int i = 0; i < p_MoreBullets; i++)
+		{
+			this.GetComponent<playerShooting>().tailStack.AddSegment();
+		}
+	}
 
-	public void abl_FasterShot(float seconds) 
-	{}
+	public void abl_FasterShot(float force) //completed and tested
+	{
+		p_FasterShot = force;
+		this.GetComponent<playerShooting>().increaseShotSpeed(p_FasterShot);
+	}
 
-	public void abl_LargerShot(float sizeMultiplier) 
-	{}
+	public void abl_LargerShot(float sizeMultiplier) //completed and tested
+	{
+		p_LargerShot = sizeMultiplier;
+	}
 
-	public void abl_GrowingDash(float sizeMultiplier) 
-	{}
+	public void abl_GrowingDash(float sizeMultiplier) //Completed and tested
+	{
+		p_GrowingDash = sizeMultiplier;
+	}
 
 	public void abl_SpikingDash(bool has)
-	{}
+	{
+		p_SpikingDash = has;
+		//this.transform.FindChild("DashSpikes").gameObject.SetActive(p_SpikingDash);
+	}
 
 	public void abl_GravityShot(float gravityMultiplier)
-	{}
+	{
+
+	}
 
 	public void abl_FasterMovement(float speedmultplier)
-	{}
+	{
+
+	}
 }

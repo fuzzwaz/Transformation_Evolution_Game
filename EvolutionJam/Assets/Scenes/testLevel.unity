@@ -189,7 +189,7 @@ GameObject:
   - 4: {fileID: 33062777}
   - 212: {fileID: 33062778}
   - 60: {fileID: 33062779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_30
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - 4: {fileID: 275414768}
   - 212: {fileID: 275414767}
   - 60: {fileID: 275414769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_22
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   - 4: {fileID: 320520924}
   - 212: {fileID: 320520925}
   - 60: {fileID: 320520926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_32 (2)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - 4: {fileID: 333262294}
   - 212: {fileID: 333262295}
   - 60: {fileID: 333262296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_44 (1)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -1899,7 +1899,7 @@ GameObject:
   - 4: {fileID: 590455497}
   - 212: {fileID: 590455498}
   - 60: {fileID: 590455499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_44 (2)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -2232,7 +2232,7 @@ GameObject:
   - 4: {fileID: 749152097}
   - 212: {fileID: 749152098}
   - 60: {fileID: 749152099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_32 (1)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -3111,7 +3111,7 @@ GameObject:
   - 4: {fileID: 918032218}
   - 212: {fileID: 918032217}
   - 60: {fileID: 918032219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_15
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -3614,7 +3614,7 @@ GameObject:
   - 4: {fileID: 1070598734}
   - 212: {fileID: 1070598735}
   - 60: {fileID: 1070598736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_31 (1)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -3944,7 +3944,7 @@ Transform:
   - {fileID: 1727570032}
   - {fileID: 1775498985}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1185395210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,7 +4243,7 @@ GameObject:
   - 4: {fileID: 1328681164}
   - 212: {fileID: 1328681163}
   - 60: {fileID: 1328681165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_49
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -4337,7 +4337,7 @@ GameObject:
   - 4: {fileID: 1334453291}
   - 212: {fileID: 1334453292}
   - 60: {fileID: 1334453293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_31
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -4458,7 +4458,7 @@ GameObject:
   - 4: {fileID: 1393582967}
   - 212: {fileID: 1393582968}
   - 60: {fileID: 1393582969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_50
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -4641,7 +4641,7 @@ GameObject:
   - 4: {fileID: 1507951453}
   - 212: {fileID: 1507951454}
   - 60: {fileID: 1507951455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_29
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -4728,7 +4728,7 @@ GameObject:
   - 4: {fileID: 1523637370}
   - 212: {fileID: 1523637369}
   - 60: {fileID: 1523637371}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_52
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -4819,7 +4819,7 @@ GameObject:
   - 4: {fileID: 1540960779}
   - 212: {fileID: 1540960780}
   - 60: {fileID: 1540960781}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_29 (1)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -5086,7 +5086,7 @@ GameObject:
   - 4: {fileID: 1569562987}
   - 212: {fileID: 1569562988}
   - 60: {fileID: 1569562989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_51
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -5701,7 +5701,7 @@ GameObject:
   - 4: {fileID: 1727570032}
   - 212: {fileID: 1727570033}
   - 60: {fileID: 1727570034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_30 (1)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -6312,7 +6312,7 @@ GameObject:
   - 4: {fileID: 1775498985}
   - 212: {fileID: 1775498986}
   - 60: {fileID: 1775498987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_30 (2)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -6977,7 +6977,7 @@ GameObject:
   - 4: {fileID: 1957881989}
   - 212: {fileID: 1957881990}
   - 60: {fileID: 1957881991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_31 (2)
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -7058,7 +7058,7 @@ GameObject:
   - 4: {fileID: 1973928886}
   - 212: {fileID: 1973928887}
   - 60: {fileID: 1973928888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_44
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -7519,7 +7519,7 @@ GameObject:
   - 4: {fileID: 2141283907}
   - 212: {fileID: 2141283908}
   - 60: {fileID: 2141283909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: amoeba stuff_32
   m_TagString: Block
   m_Icon: {fileID: 0}

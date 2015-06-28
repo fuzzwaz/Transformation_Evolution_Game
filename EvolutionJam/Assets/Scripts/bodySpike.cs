@@ -12,7 +12,16 @@ public class bodySpike : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		body = this.transform.parent.gameObject;
-		playerNum = body.GetComponent<playerMovement>().playerNum;
+		if (body.GetComponent<playerMovement>() != null)
+		{
+			playerNum = body.GetComponent<playerMovement>().playerNum;
+		}
+		else
+		{
+			body = body.transform.parent.gameObject;
+			playerNum = body.GetComponent<playerMovement>().playerNum;
+		}
+
 	}
 	
 	// Update is called once per frame
