@@ -119,9 +119,15 @@ public class playerMovement : MonoBehaviour {
 	void RotateToAimDirection()
 	{
 		Vector2 v = new Vector2(Input.GetAxis("AimHorz" + playerNum.ToString()), Input.GetAxis("AimVert" + playerNum.ToString()));
+
+		if(v.x < 0.01f && v.y < 0.01f && v.x > -0.1f && v.y > -0.1f)
+		{
+			v = rb2d.velocity;
+		}
+
 		v.Normalize();
 		float angle = Vector2.Angle(Vector2.up, v);
-		if(Input.GetAxis("AimHorz" + playerNum.ToString()) > 0.0f)
+		if(v.x > 0.0f)
 		{
 			angle = 360 - angle;
 		}
