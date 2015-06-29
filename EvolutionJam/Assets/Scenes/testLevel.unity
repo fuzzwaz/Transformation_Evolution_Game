@@ -2133,6 +2133,14 @@ MonoBehaviour:
   player2score: {fileID: 448360182}
   player3score: {fileID: 1351045173}
   player4score: {fileID: 1364054772}
+  p1String: 
+  p2String: 
+  p3String: 
+  p4String: 
+  p1scoreString: 
+  p2scoreString: 
+  p3scoreString: 
+  p4scoreString: 
   timeToChange: 2
 --- !u!4 &1684984021
 Transform:

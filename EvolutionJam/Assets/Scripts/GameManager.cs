@@ -206,23 +206,16 @@ public class GameManager : MonoBehaviour {
 		if (rounds > 0)
 		{
 
-			for (int i = 0; i < 4; i++)
-			{
-				int num = i + 1;
-				playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
-
-				print ("bullets shot: " + i  + " : "); print(PlayerInformation[i].bulletsShot);// = 0;
-				print ("dashes made: " + i  + " : "); print(PlayerInformation[i].dashesMade);// = 0;
-				print ("bullets hit: " + i  + " : ");print(PlayerInformation[i].bulletHits);// = 0;
-				print ("surrounding objects: " + i + " : "); print(PlayerInformation[i].surroundingObjects);// = 0;
-				print ("dashing hits: " + i + " : ");print(PlayerInformation[i].dashingHits);// = 0;
-				print ("death range: " + i + " : ");print(PlayerInformation[i].deathRange);// = 0.0f;
-				print ("length of life: " + i + " : ");print(PlayerInformation[i].lengthOfLife);// = 0.0f;
-				
-			}
-
 			fuzzyEngine.RunWithInputs(PlayerInformation);
+			GameObject evolutionUpdate = GameObject.Find ("EvolutionNameAndHide");
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p1scoreString = PlayerRoundsWon[0].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p2scoreString = PlayerRoundsWon[1].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p3scoreString = PlayerRoundsWon[2].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p4scoreString = PlayerRoundsWon[3].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().updateText();
 		}
+		if (rounds == 0)
+		{
 			for (int i = 0; i < 4; i++)
 			{
 				int num = i + 1;
@@ -240,7 +233,8 @@ public class GameManager : MonoBehaviour {
 				PlayerInformation[i].lengthOfLife = 0.0f;
 				
 			}
-			
+
+		}
 	}
 
 }
