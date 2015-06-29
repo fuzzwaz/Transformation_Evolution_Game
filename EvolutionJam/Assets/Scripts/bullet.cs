@@ -82,7 +82,7 @@ public class bullet : MonoBehaviour {
 		{
 			if (notExploded)
 			{
-				if (col.gameObject.name == "Bullet" || col.gameObject.name == "Bullet(Clone)")
+				if ((col.gameObject.name == "Bullet" || col.gameObject.name == "Bullet(Clone)") && col.gameObject.GetComponent<bullet>().canGet)
 				{
 					GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
 					newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
