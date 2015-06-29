@@ -60,10 +60,15 @@ public class GameManager : MonoBehaviour {
 	private bool p4Dead = false;
 
 	public FuzzyInferenceEngine fuzzyEngine;
-	
+
+	void Awake ()
+	{
+
+	}
 
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad(gameObject);
 		PlayerInformation = new playerInfo[4];
 		PlayerAbilities = new playerAbilityMap[4];
 		playerObjects = new GameObject[4];
@@ -80,7 +85,14 @@ public class GameManager : MonoBehaviour {
 			restartTimer -= Time.deltaTime;
 			if (restartTimer < 0.0f)
 			{
-				Application.LoadLevel("testLevel");
+				Application.LoadLevel("Evolution");
+				restartTimer = 10.0f;
+				playersAlive = 4;
+				
+				p1Dead = false;
+				p2Dead = false;
+				p3Dead = false;
+				p4Dead = false;
 			}
 		}
 	}
@@ -173,7 +185,7 @@ public class GameManager : MonoBehaviour {
 			PlayerAbilities[i].a_gravity = 0.0f;
 			PlayerAbilities[i].a_explosive = 1.0f;
 			PlayerAbilities[i].a_longerDash = 0.0f;
-			PlayerAbilities[i].a_fasterShot = 50.0f;
+			PlayerAbilities[i].a_fasterShot = 0.0f;
 			PlayerAbilities[i].a_fasterDash = 0.0f;
 			PlayerAbilities[i].a_largerShot = 0.0f;
 			PlayerAbilities[i].a_growingDash = 0.0f;
@@ -181,8 +193,8 @@ public class GameManager : MonoBehaviour {
 			
 			PlayerAbilities[i].a_block = false;
 			PlayerAbilities[i].a_seeking = false;
-			PlayerAbilities[i].a_poison = false;
-			PlayerAbilities[i].a_spread = false;
+			PlayerAbilities[i].a_poison = true;
+			PlayerAbilities[i].a_spread = true;
 			PlayerAbilities[i].a_blink = false;
 			PlayerAbilities[i].a_piercing = false;
 			PlayerAbilities[i].a_spikingDash = false;
