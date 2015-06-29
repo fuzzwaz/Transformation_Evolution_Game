@@ -238,6 +238,12 @@ public class playerMovement : MonoBehaviour {
 		
 	}
 
+	public void increaseSpeed (float increase)
+	{
+		playerSpeed += increase;	
+		savedPlayerSpeed = playerSpeed;
+	}
+
 	public void CleanUpDeceasedBody()
 	{
 		Destroy (this.gameObject);
