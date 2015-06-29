@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour {
 
 
 
-				if (PlayerRoundsWon[0] >= 3 || PlayerRoundsWon[1] >= 3 || PlayerRoundsWon[2] >= 3 || PlayerRoundsWon[3] >= 3)
+				if (PlayerRoundsWon[0] >= 5 || PlayerRoundsWon[1] >= 5 || PlayerRoundsWon[2] >= 5 || PlayerRoundsWon[3] >= 5)
 				{
 					restartTimer = 2.0f;
 					playersAlive = 4;
@@ -118,7 +118,6 @@ public class GameManager : MonoBehaviour {
 				else
 				{
 					rounds++;
-					//roundStart();
 					restartTimer = 2.0f;
 					playersAlive = 4;
 					
@@ -146,8 +145,10 @@ public class GameManager : MonoBehaviour {
 		else if (player == 4 && p4Dead)
 		{return;}
 
+		playerObjects[player - 1].GetComponent<playerAbilities>().UpdatePlayerInfo();
 		if (player == 1)
 		{
+
 			p1Dead = true;
 		}
 		else if (player == 2)
@@ -204,6 +205,22 @@ public class GameManager : MonoBehaviour {
 	{
 		if (rounds > 0)
 		{
+
+			for (int i = 0; i < 4; i++)
+			{
+				int num = i + 1;
+				playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
+
+				print ("bullets shot: " + i  + " : "); print(PlayerInformation[i].bulletsShot);// = 0;
+				print ("dashes made: " + i  + " : "); print(PlayerInformation[i].dashesMade);// = 0;
+				print ("bullets hit: " + i  + " : ");print(PlayerInformation[i].bulletHits);// = 0;
+				print ("surrounding objects: " + i + " : "); print(PlayerInformation[i].surroundingObjects);// = 0;
+				print ("dashing hits: " + i + " : ");print(PlayerInformation[i].dashingHits);// = 0;
+				print ("death range: " + i + " : ");print(PlayerInformation[i].deathRange);// = 0.0f;
+				print ("length of life: " + i + " : ");print(PlayerInformation[i].lengthOfLife);// = 0.0f;
+				
+			}
+
 			fuzzyEngine.RunWithInputs(PlayerInformation);
 		}
 			for (int i = 0; i < 4; i++)

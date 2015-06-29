@@ -23,15 +23,15 @@ public class PlayerWinDecipherer : MonoBehaviour {
 			GM = GameObject.Find ("GameManagerMaster");
 			if (GM.gameObject != null)
 			{
-				if (GM.GetComponent<GameManager>().PlayerRoundsWon[0] == 3)
+				if (GM.GetComponent<GameManager>().PlayerRoundsWon[0] == 5)
 				{
 					playerNumber.text = "PLAYER " + "1";
 				}
-				else if (GM.GetComponent<GameManager>().PlayerRoundsWon[1] == 3)
+				else if (GM.GetComponent<GameManager>().PlayerRoundsWon[1] == 5)
 				{
 					playerNumber.text = "PLAYER " + "2";
 				}
-				else if (GM.GetComponent<GameManager>().PlayerRoundsWon[2] == 3)
+				else if (GM.GetComponent<GameManager>().PlayerRoundsWon[2] == 5)
 				{
 					playerNumber.text = "PLAYER " + "3";
 				}
