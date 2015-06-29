@@ -8,15 +8,23 @@ namespace FuzzyEvolutions
       private readonly IDictionary<string, FuzzySet> _sets;
       private readonly ICollection<KeyValuePair<string, double>> _setMemberships;
 
-      public FuzzyOutput(string label)
+      public FuzzyOutput(string label, bool isRepeatable)
       {
          Label = label;
+         Repeatable = isRepeatable;
          _sets = new Dictionary<string, FuzzySet>();
          _setMemberships = new List<KeyValuePair<string, double>>();
          Centroid = 0;
       }
 
       public string Label
+      {
+         get;
+
+         private set;
+      }
+
+      public bool Repeatable
       {
          get;
 
