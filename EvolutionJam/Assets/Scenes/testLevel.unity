@@ -514,6 +514,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11435928, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435928, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
+      propertyPath: strengthX
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435928, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
+      propertyPath: strengthY
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435928, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
+      propertyPath: fishEyeShader
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
   m_IsPrefabParent: 0

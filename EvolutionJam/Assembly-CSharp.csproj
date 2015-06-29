@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\AI\MembershipFunctions\NegativeLinearFunction.cs" />
      <Compile Include="Assets\Scripts\AI\MembershipFunctions\PositiveLinearFunction.cs" />
      <Compile Include="Assets\Scripts\AI\MembershipFunctions\TriangleFunction.cs" />
+     <Compile Include="Assets\Scripts\AI\Player.cs" />
      <Compile Include="Assets\Scripts\Colorizer.cs" />
      <Compile Include="Assets\Scripts\EvolutionToGameSwitcher.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />

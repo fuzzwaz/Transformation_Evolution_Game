@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour {
 		//PlayerAbilities = new playerAbilityMap[4];
 		playerObjects = new GameObject[4];
 		fuzzyEngine = new FuzzyInferenceEngine();
+		print("started");
 		//resetPlayers();
 		//roundStart ();
 	}
@@ -201,8 +202,10 @@ public class GameManager : MonoBehaviour {
 
 	public void resetPlayers()
 	{
-		if (rounds >= 0)
+		if (rounds > 0)
 		{
+			fuzzyEngine.RunWithInputs(PlayerInformation);
+		}
 			for (int i = 0; i < 4; i++)
 			{
 				int num = i + 1;
@@ -218,81 +221,84 @@ public class GameManager : MonoBehaviour {
 				PlayerInformation[i].dashingHits = 0;
 				PlayerInformation[i].deathRange = 0.0f;
 				PlayerInformation[i].lengthOfLife = 0.0f;
-
-				if (rounds > 0)
-				{
-				PlayerAbilities[i].a_spike = Random.Range (0,2);
-				PlayerAbilities[i].a_moreAmmo = Random.Range(0,6);
-
-
-				PlayerAbilities[i].a_bouncing = Random.Range (0,5);
-				
-				PlayerAbilities[i].a_gravity = (float) Random.Range (0,100);
-				PlayerAbilities[i].a_explosive = (float) Random.Range (0,2);
-				PlayerAbilities[i].a_longerDash = (float) Random.Range (0,2);
-				PlayerAbilities[i].a_fasterShot = (float) Random.Range (0,150);
-				PlayerAbilities[i].a_fasterDash = (float) Random.Range (0,50);
-				PlayerAbilities[i].a_largerShot = 0.0f;
-				PlayerAbilities[i].a_growingDash = 0.0f;
-				PlayerAbilities[i].a_fasterMovement = (float) Random.Range (0,2);
-
-				if (Random.Range (0,2) == 0)
-				{
-					PlayerAbilities[i].a_block = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_block = true;
-				}
-
-				if (Random.Range (0,2) == 0)
-				{
-					PlayerAbilities[i].a_seeking = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_seeking = true;
-				}
-
-				if (Random.Range (0,50) < 40)
-				{
-					PlayerAbilities[i].a_poison = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_poison = true;
-				}
-
-				if (Random.Range (0,2) == 0)
-				{
-					PlayerAbilities[i].a_spread = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_spread = true;
-				}
-
-
-				if (Random.Range (0,2) == 0)
-				{
-					PlayerAbilities[i].a_piercing = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_piercing = true;
-				}
-
-				if (Random.Range (0,2) == 0)
-				{
-					PlayerAbilities[i].a_spikingDash = false;
-				}
-				else
-				{
-					PlayerAbilities[i].a_spikingDash = true;
-				}
-				}
 				
 			}
-		}
+			
 	}
+
 }
+
+//
+//				if (rounds > 0)
+//				{
+//
+//				PlayerAbilities[i].a_spike = Random.Range (0,2);
+//				PlayerAbilities[i].a_moreAmmo = Random.Range(0,6);
+//
+//
+//				PlayerAbilities[i].a_bouncing = Random.Range (0,5);
+//				
+//				PlayerAbilities[i].a_gravity = (float) Random.Range (0,100);
+//				PlayerAbilities[i].a_explosive = (float) Random.Range (0,2);
+//				PlayerAbilities[i].a_longerDash = (float) Random.Range (0,2);
+//				PlayerAbilities[i].a_fasterShot = (float) Random.Range (0,150);
+//				PlayerAbilities[i].a_fasterDash = (float) Random.Range (0,50);
+//				PlayerAbilities[i].a_largerShot = 0.0f;
+//				PlayerAbilities[i].a_growingDash = 0.0f;
+//				PlayerAbilities[i].a_fasterMovement = (float) Random.Range (0,2);
+//
+//				if (Random.Range (0,2) == 0)
+//				{
+//					PlayerAbilities[i].a_block = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_block = true;
+//				}
+//
+//				if (Random.Range (0,2) == 0)
+//				{
+//					PlayerAbilities[i].a_seeking = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_seeking = true;
+//				}
+//
+//				if (Random.Range (0,50) < 40)
+//				{
+//					PlayerAbilities[i].a_poison = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_poison = true;
+//				}
+//
+//				if (Random.Range (0,2) == 0)
+//				{
+//					PlayerAbilities[i].a_spread = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_spread = true;
+//				}
+//
+//
+//				if (Random.Range (0,2) == 0)
+//				{
+//					PlayerAbilities[i].a_piercing = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_piercing = true;
+//				}
+//
+//				if (Random.Range (0,2) == 0)
+//				{
+//					PlayerAbilities[i].a_spikingDash = false;
+//				}
+//				else
+//				{
+//					PlayerAbilities[i].a_spikingDash = true;
+//				}
+//			}

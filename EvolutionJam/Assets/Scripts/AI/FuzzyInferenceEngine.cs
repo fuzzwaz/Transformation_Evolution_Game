@@ -823,41 +823,50 @@ namespace FuzzyEvolutions
 
       private void SendSelection(int playerNumber, string selectionLabel)
       {
+			GameObject GM = GameObject.Find ("GameManagerMaster");
          if (selectionLabel == Labels.Output_Block)
          {
             // Block selected.
             Debug.Log (playerNumber + ": Block Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_block = true;
+
          }
          else if (selectionLabel == Labels.Output_SeekingShot)
          {
             // SeekingShot selected.
             Debug.Log (playerNumber + ": Seeking Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_seeking = true;
 
          }
          else if (selectionLabel == Labels.Output_PoisonGas)
          {
             // PoisonGas selected.
             Debug.Log (playerNumber + ": Poision Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_poison = true;
          }
          else if (selectionLabel == Labels.Output_SpikeOnBody)
          {
             // SpikeOnBody selected.
             Debug.Log (playerNumber + ": Spike Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spike = 1;
          }
          else if (selectionLabel == Labels.Output_SpreadShot)
          {
             // SpreadShot selected.
             Debug.Log (playerNumber + ": Spread Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spread = true;
          }
          else if (selectionLabel == Labels.Output_ExplosiveShot)
          {
             // ExplosiveShot selected.
             Debug.Log (playerNumber + ": Explosive Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_explosive = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_explosive += 1.0f;
          }
          else if (selectionLabel == Labels.Output_BouncingShot)
          {
             // BouncingShot selected.
             Debug.Log (playerNumber + ": Bounce Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_bouncing = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_bouncing += 2;
          }
          else if (selectionLabel == Labels.Output_Blink)
          {
@@ -868,51 +877,61 @@ namespace FuzzyEvolutions
          {
             // PiercingShot selected.
             Debug.Log (playerNumber + ": Piercing Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_piercing = true;
          }
          else if (selectionLabel == Labels.Output_LongerDash)
          {
             // LongerDash selected.
             Debug.Log (playerNumber + ": Longer Dash Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_longerDash = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_longerDash += 0.5f;
          }
          else if (selectionLabel == Labels.Output_FasterDash)
          {
             // FasterDash selected.
             Debug.Log (playerNumber + ": Faster Dash Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterDash = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterDash += 150.0f;
          }
          else if (selectionLabel == Labels.Output_MoreAmmo)
          {
             // MoreAmmo selected.
             Debug.Log (playerNumber + ": More Ammo Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_moreAmmo = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_moreAmmo += 3;
          }
          else if (selectionLabel == Labels.Output_FasterBullets)
          {
             // FasterBullets selected.
             Debug.Log (playerNumber + ": Faster Bullets Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterShot = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterShot += 150.0f;
          }
          else if (selectionLabel == Labels.Output_LargerBullets)
          {
             // LargerBullets selected.
             Debug.Log (playerNumber + ": Larger Bullets Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_largerShot = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_largerShot += 1.0f;
          }
          else if (selectionLabel == Labels.Output_GrowingDash)
          {
             // GrowingDash selected.
             Debug.Log (playerNumber + ": Growing Dash Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_growingDash = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_growingDash += 0.1f;
          }
          else if (selectionLabel == Labels.Output_SpikesWhenDashing)
          {
             // SpikesWhenDashing selected.
             Debug.Log (playerNumber + ": Spikes when Dashing Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spikingDash = true;
          }
          else if (selectionLabel == Labels.Output_BlackHoleShot)
          {
             // BlackHoleShot selected.
             Debug.Log (playerNumber + ": BlackHole Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_gravity = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_gravity += 10.0f;
          }
          else if (selectionLabel == Labels.Output_FasterMovement)
          {
             // FasterMovement selected.
             Debug.Log (playerNumber + ": Faster Movement Selected");
+				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterMovement = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterMovement += 250.0f; 
          }
       }
    }
