@@ -13,7 +13,7 @@ namespace FuzzyEvolutions
       private readonly ICollection<FuzzyOutput> _outputs;
       private readonly ICollection<FuzzyRule> _rules;
 
-      private readonly Random _rng;
+      private readonly System.Random _rng;
 
       public FuzzyInferenceEngine()
       {
@@ -22,7 +22,7 @@ namespace FuzzyEvolutions
          _outputs = new List<FuzzyOutput>();
          _rules = new List<FuzzyRule>();
 
-         _rng = new Random();
+         _rng = new System.Random();
 
          #region Input Setup
 
@@ -175,7 +175,7 @@ namespace FuzzyEvolutions
          outputPoisonGas.AddSet(outputSetHigh);
          _outputs.Add(outputPoisonGas);
 
-         var outputSpikeOnBody = new FuzzyOutput(Labels.Output_SpikeOnBody, true);
+         var outputSpikeOnBody = new FuzzyOutput(Labels.Output_SpikeOnBody, false);
          outputSpikeOnBody.AddSet(outputSetLow);
          outputSpikeOnBody.AddSet(outputSetMedium);
          outputSpikeOnBody.AddSet(outputSetHigh);
