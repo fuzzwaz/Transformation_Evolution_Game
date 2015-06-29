@@ -80,8 +80,17 @@ public class bullet : MonoBehaviour {
 
 		if (player.gameObject != null && player.GetComponent<playerAbilities>().p_explosiveShot > 0.0f)
 		{
-			if (notExploded && col.gameObject.tag != "Bullet")
+			if (notExploded)
 			{
+				if (col.gameObject.name == "Bullet" || col.gameObject.name == "Bullet(Clone)")
+				{
+					GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
+					newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
+					newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
+					                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
+					                                                newExplosion.transform.localScale.z);
+					notExploded = false;
+				}
 				if (col.gameObject.tag == "Player")
 				{
 					if (col.gameObject.GetComponent<playerMovement>().playerNum != playerBullet)
@@ -93,6 +102,10 @@ public class bullet : MonoBehaviour {
 						                                                newExplosion.transform.localScale.z);
 						notExploded = false;
 					}
+				}
+				else if (col.gameObject.tag == "Bullet")
+				{
+
 				}
 				else
 				{

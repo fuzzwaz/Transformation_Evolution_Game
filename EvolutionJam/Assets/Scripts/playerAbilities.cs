@@ -41,7 +41,7 @@ public class playerAbilities : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerNumID = this.GetComponent<playerMovement>().playerNum - 1;
-		gameManager = (GameObject) GameObject.Find("GameManager");
+		gameManager = (GameObject) GameObject.Find("GameManagerMaster");
 		evolutionaryParts = this.transform.FindChild("EvolutionParts").gameObject;
 	}
 	
@@ -55,6 +55,7 @@ public class playerAbilities : MonoBehaviour {
 
 	public void UpdatePlayerInfo()
 	{
+		gameManager = (GameObject) GameObject.Find("GameManagerMaster");
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].bulletsShot = bulletsShot;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].dashesMade = dashesMade;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].bulletHits = bulletHits;
