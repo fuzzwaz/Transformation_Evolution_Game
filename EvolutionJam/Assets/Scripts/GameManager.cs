@@ -205,8 +205,13 @@ public class GameManager : MonoBehaviour {
 	{
 		if (rounds > 0)
 		{
-
-			fuzzyEngine.RunWithInputs(PlayerInformation);
+			for (int i = 0; i < 4; i++)
+			{
+				int num = i + 1;
+				playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
+			}
+				
+				fuzzyEngine.RunWithInputs(PlayerInformation);
 			GameObject evolutionUpdate = GameObject.Find ("EvolutionNameAndHide");
 			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p1scoreString = PlayerRoundsWon[0].ToString();
 			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p2scoreString = PlayerRoundsWon[1].ToString();
