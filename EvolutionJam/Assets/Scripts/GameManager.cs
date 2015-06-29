@@ -222,7 +222,15 @@ public class GameManager : MonoBehaviour {
 			}
 
 			fuzzyEngine.RunWithInputs(PlayerInformation);
+			GameObject evolutionUpdate = GameObject.Find ("EvolutionNameAndHide");
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p1scoreString = PlayerRoundsWon[0].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p2scoreString = PlayerRoundsWon[1].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p3scoreString = PlayerRoundsWon[2].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().p4scoreString = PlayerRoundsWon[3].ToString();
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().updateText();
 		}
+		if (rounds == 0)
+		{
 			for (int i = 0; i < 4; i++)
 			{
 				int num = i + 1;
@@ -240,7 +248,8 @@ public class GameManager : MonoBehaviour {
 				PlayerInformation[i].lengthOfLife = 0.0f;
 				
 			}
-			
+
+		}
 	}
 
 }

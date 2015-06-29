@@ -824,18 +824,22 @@ namespace FuzzyEvolutions
       private void SendSelection(int playerNumber, string selectionLabel)
       {
 			GameObject GM = GameObject.Find ("GameManagerMaster");
+			GameObject evolutionUpdate = GameObject.Find ("EvolutionNameAndHide");
+			string new_abl = "test"; 
          if (selectionLabel == Labels.Output_Block)
          {
             // Block selected.
             Debug.Log (playerNumber + ": Block Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_block = true;
-
+	
+				new_abl = "Block Abilitiy";
          }
          else if (selectionLabel == Labels.Output_SeekingShot)
          {
             // SeekingShot selected.
             Debug.Log (playerNumber + ": Seeking Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_seeking = true;
+				new_abl = "Seeking Shots";
 
          }
          else if (selectionLabel == Labels.Output_PoisonGas)
@@ -843,30 +847,35 @@ namespace FuzzyEvolutions
             // PoisonGas selected.
             Debug.Log (playerNumber + ": Poision Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_poison = true;
+				new_abl = "Poision Gas";
          }
          else if (selectionLabel == Labels.Output_SpikeOnBody)
          {
             // SpikeOnBody selected.
             Debug.Log (playerNumber + ": Spike Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spike = 1;
+				new_abl = "Body Spike";
          }
          else if (selectionLabel == Labels.Output_SpreadShot)
          {
             // SpreadShot selected.
             Debug.Log (playerNumber + ": Spread Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spread = true;
+				new_abl = "Spread Shots";
          }
          else if (selectionLabel == Labels.Output_ExplosiveShot)
          {
             // ExplosiveShot selected.
             Debug.Log (playerNumber + ": Explosive Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_explosive = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_explosive += 1.0f;
-         }
+				new_abl = "Explosive Shots";
+			}
          else if (selectionLabel == Labels.Output_BouncingShot)
          {
             // BouncingShot selected.
             Debug.Log (playerNumber + ": Bounce Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_bouncing = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_bouncing += 2;
+				new_abl = "Bouncing Shots";
          }
          else if (selectionLabel == Labels.Output_Blink)
          {
@@ -878,37 +887,43 @@ namespace FuzzyEvolutions
             // PiercingShot selected.
             Debug.Log (playerNumber + ": Piercing Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_piercing = true;
+				new_abl = "Piercing Shots";
          }
          else if (selectionLabel == Labels.Output_LongerDash)
          {
             // LongerDash selected.
             Debug.Log (playerNumber + ": Longer Dash Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_longerDash = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_longerDash += 0.5f;
-         }
+				new_abl = "Longer Dash";
+			}
          else if (selectionLabel == Labels.Output_FasterDash)
          {
             // FasterDash selected.
             Debug.Log (playerNumber + ": Faster Dash Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterDash = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterDash += 150.0f;
-         }
+				new_abl = "Faster Dash";
+			}
          else if (selectionLabel == Labels.Output_MoreAmmo)
          {
             // MoreAmmo selected.
             Debug.Log (playerNumber + ": More Ammo Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_moreAmmo = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_moreAmmo += 3;
-         }
+				new_abl = "More Ammo";
+			}
          else if (selectionLabel == Labels.Output_FasterBullets)
          {
             // FasterBullets selected.
             Debug.Log (playerNumber + ": Faster Bullets Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterShot = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterShot += 150.0f;
-         }
+				new_abl = "Faster Bullets";
+			}
          else if (selectionLabel == Labels.Output_LargerBullets)
          {
             // LargerBullets selected.
             Debug.Log (playerNumber + ": Larger Bullets Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_largerShot = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_largerShot += 1.0f;
-         }
+				new_abl = "Larger Bullets";
+			}
          else if (selectionLabel == Labels.Output_GrowingDash)
          {
             // GrowingDash selected.
@@ -920,19 +935,41 @@ namespace FuzzyEvolutions
             // SpikesWhenDashing selected.
             Debug.Log (playerNumber + ": Spikes when Dashing Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_spikingDash = true;
-         }
+				new_abl = "Larger Dash";
+			}
          else if (selectionLabel == Labels.Output_BlackHoleShot)
          {
             // BlackHoleShot selected.
             Debug.Log (playerNumber + ": BlackHole Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_gravity = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_gravity += 10.0f;
-         }
+				new_abl = "Gravity Shots";
+			
+			}
          else if (selectionLabel == Labels.Output_FasterMovement)
          {
             // FasterMovement selected.
             Debug.Log (playerNumber + ": Faster Movement Selected");
 				GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterMovement = GM.GetComponent<GameManager>().PlayerAbilities[playerNumber - 1].a_fasterMovement += 250.0f; 
-         }
+				new_abl = "Faster Movement";
+			}
+			if (playerNumber == 1)
+			{
+				evolutionUpdate.GetComponent<EvolutionNamerandHider>().p1String = new_abl;
+			}
+			else if (playerNumber == 2)
+			{
+				evolutionUpdate.GetComponent<EvolutionNamerandHider>().p2String = new_abl;
+			}
+			else if (playerNumber == 3)
+			{
+				evolutionUpdate.GetComponent<EvolutionNamerandHider>().p3String = new_abl;
+			}
+			else if (playerNumber == 4)
+			{
+				evolutionUpdate.GetComponent<EvolutionNamerandHider>().p4String = new_abl;
+			}
+
+			evolutionUpdate.GetComponent<EvolutionNamerandHider>().updateText();
       }
    }
 }
