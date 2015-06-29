@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class EvolutionNamerandHider : MonoBehaviour {
 	public Text player1, player2, player3, player4;
+	public Text player1score, player2score, player3score, player4score;
 	public float timeToChange = 2.0f;
 	float countUp = 0.0f;
 	
@@ -15,6 +16,13 @@ public class EvolutionNamerandHider : MonoBehaviour {
 		player2.text = " ";
 		player3.text = " ";
 		player4.text = " ";
+
+		//TODO: Get each player's score and set it here (you can delete testScore)
+		int testScore = 0;
+		player1score.text = testScore.ToString();
+		player2score.text = testScore.ToString();
+		player3score.text = testScore.ToString();
+		player4score.text = testScore.ToString();
 	}
 	
 	void Update()
