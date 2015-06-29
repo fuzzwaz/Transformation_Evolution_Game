@@ -46,11 +46,13 @@ public class GameManager : MonoBehaviour {
 
 
 
-	public playerInfo[] PlayerInformation;
-	public playerAbilityMap[] PlayerAbilities;
+	public playerInfo[] PlayerInformation = new playerInfo[4];
+	public int[] PlayerRoundsWon;// = new int[4];
+	public playerAbilityMap[] PlayerAbilities = new playerAbilityMap[4];
 	public GameObject AIManager;
+	public int rounds = 0;
 
-	private float restartTimer = 10.0f;
+	private float restartTimer = 2.0f;
 	private int playersAlive = 4;
 	private GameObject[] playerObjects;
 
@@ -61,38 +63,73 @@ public class GameManager : MonoBehaviour {
 
 	public FuzzyInferenceEngine fuzzyEngine;
 
-	void Awake ()
-	{
-
-	}
-
 	// Use this for initialization
 	void Start () {
+
+		if (GameObject.Find("GameManagerMaster") != null)
+		{
+			Destroy(this.gameObject);
+		}
+
+
+		this.gameObject.name = "GameManagerMaster";
 		DontDestroyOnLoad(gameObject);
-		PlayerInformation = new playerInfo[4];
-		PlayerAbilities = new playerAbilityMap[4];
+		PlayerRoundsWon = new int[4];
+		//PlayerInformation = new playerInfo[4];
+		//PlayerAbilities = new playerAbilityMap[4];
 		playerObjects = new GameObject[4];
 		fuzzyEngine = new FuzzyInferenceEngine();
-		resetPlayers();
-		roundStart ();
+		//resetPlayers();
+		//roundStart ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 		if (playersAlive <= 1)
 		{
+
 			restartTimer -= Time.deltaTime;
 			if (restartTimer < 0.0f)
 			{
-				Application.LoadLevel("Evolution");
-				restartTimer = 10.0f;
-				playersAlive = 4;
-				
-				p1Dead = false;
-				p2Dead = false;
-				p3Dead = false;
-				p4Dead = false;
+				if (!p1Dead)
+				{PlayerRoundsWon[0]++;}
+				else if (!p2Dead)
+				{PlayerRoundsWon[1]++;}
+				else if (!p3Dead)
+				{PlayerRoundsWon[2]++;}
+				else if (!p4Dead)
+				{PlayerRoundsWon[3]++;}
+
+
+
+				if (PlayerRoundsWon[0] >= 3 || PlayerRoundsWon[1] >= 3 || PlayerRoundsWon[2] >= 3 || PlayerRoundsWon[3] >= 3)
+				{
+					restartTimer = 2.0f;
+					playersAlive = 4;
+					
+					p1Dead = false;
+					p2Dead = false;
+					p3Dead = false;
+					p4Dead = false;
+					Application.LoadLevel("Winner");
+
+				}
+				else
+				{
+					rounds++;
+					//roundStart();
+					restartTimer = 2.0f;
+					playersAlive = 4;
+					
+					p1Dead = false;
+					p2Dead = false;
+					p3Dead = false;
+					p4Dead = false;
+					Application.LoadLevel("testLevel");
+
+
+				}
+
 			}
 		}
 	}
@@ -130,13 +167,14 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void roundStart()
+	public void roundStart()
 	{
-		fuzzyEngine.RunWithInputs(PlayerInformation);
 		for (int i = 0; i < 4; i++)
 		{
 			if (playerObjects[i] != null)
 			{
+				int num = i + 1;
+				playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
 				playerObjects[i] = playerObjects[i].transform.FindChild("Body").gameObject;
 				
 				playerObjects[i].GetComponent<playerAbilities>().abl_Block(PlayerAbilities[i].a_block);
@@ -161,44 +199,100 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void resetPlayers()
+	public void resetPlayers()
 	{
-		for (int i = 0; i < 4; i++)
+		if (rounds >= 0)
 		{
-			int num = i + 1;
-			playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
+			for (int i = 0; i < 4; i++)
+			{
+				int num = i + 1;
+				playerObjects[i] = (GameObject) GameObject.Find ("Player" + num.ToString());
 
-			PlayerInformation[i].playerDied = false;
-			PlayerInformation[i].playerNum = i + 1;
-			PlayerInformation[i].bulletsShot = 0;
-			PlayerInformation[i].dashesMade = 0;
-			PlayerInformation[i].bulletHits = 0;
-			PlayerInformation[i].surroundingObjects = 0;
-			PlayerInformation[i].dashingHits = 0;
-			PlayerInformation[i].deathRange = 0.0f;
-			PlayerInformation[i].lengthOfLife = 0.0f;
-			
-			PlayerAbilities[i].a_spike = 0;
-			PlayerAbilities[i].a_moreAmmo = 5;
-			PlayerAbilities[i].a_bouncing = 0;
-			
-			PlayerAbilities[i].a_gravity = 0.0f;
-			PlayerAbilities[i].a_explosive = 1.0f;
-			PlayerAbilities[i].a_longerDash = 0.0f;
-			PlayerAbilities[i].a_fasterShot = 0.0f;
-			PlayerAbilities[i].a_fasterDash = 0.0f;
-			PlayerAbilities[i].a_largerShot = 0.0f;
-			PlayerAbilities[i].a_growingDash = 0.0f;
-			PlayerAbilities[i].a_fasterMovement = 0.0f;
-			
-			PlayerAbilities[i].a_block = false;
-			PlayerAbilities[i].a_seeking = false;
-			PlayerAbilities[i].a_poison = true;
-			PlayerAbilities[i].a_spread = true;
-			PlayerAbilities[i].a_blink = false;
-			PlayerAbilities[i].a_piercing = false;
-			PlayerAbilities[i].a_spikingDash = false;
-			
+
+				PlayerInformation[i].playerDied = false;
+				PlayerInformation[i].playerNum = i + 1;
+				PlayerInformation[i].bulletsShot = 0;
+				PlayerInformation[i].dashesMade = 0;
+				PlayerInformation[i].bulletHits = 0;
+				PlayerInformation[i].surroundingObjects = 0;
+				PlayerInformation[i].dashingHits = 0;
+				PlayerInformation[i].deathRange = 0.0f;
+				PlayerInformation[i].lengthOfLife = 0.0f;
+
+				if (rounds > 0)
+				{
+				PlayerAbilities[i].a_spike = Random.Range (0,2);
+				PlayerAbilities[i].a_moreAmmo = Random.Range(0,6);
+
+
+				PlayerAbilities[i].a_bouncing = Random.Range (0,5);
+				
+				PlayerAbilities[i].a_gravity = (float) Random.Range (0,100);
+				PlayerAbilities[i].a_explosive = (float) Random.Range (0,2);
+				PlayerAbilities[i].a_longerDash = (float) Random.Range (0,2);
+				PlayerAbilities[i].a_fasterShot = (float) Random.Range (0,150);
+				PlayerAbilities[i].a_fasterDash = (float) Random.Range (0,50);
+				PlayerAbilities[i].a_largerShot = 0.0f;
+				PlayerAbilities[i].a_growingDash = 0.0f;
+				PlayerAbilities[i].a_fasterMovement = (float) Random.Range (0,2);
+
+				if (Random.Range (0,2) == 0)
+				{
+					PlayerAbilities[i].a_block = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_block = true;
+				}
+
+				if (Random.Range (0,2) == 0)
+				{
+					PlayerAbilities[i].a_seeking = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_seeking = true;
+				}
+
+				if (Random.Range (0,50) < 40)
+				{
+					PlayerAbilities[i].a_poison = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_poison = true;
+				}
+
+				if (Random.Range (0,2) == 0)
+				{
+					PlayerAbilities[i].a_spread = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_spread = true;
+				}
+
+
+				if (Random.Range (0,2) == 0)
+				{
+					PlayerAbilities[i].a_piercing = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_piercing = true;
+				}
+
+				if (Random.Range (0,2) == 0)
+				{
+					PlayerAbilities[i].a_spikingDash = false;
+				}
+				else
+				{
+					PlayerAbilities[i].a_spikingDash = true;
+				}
+				}
+				
+			}
 		}
 	}
 }
