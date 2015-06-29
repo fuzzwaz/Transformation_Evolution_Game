@@ -168,12 +168,12 @@ public class GameManager : MonoBehaviour {
 			
 			PlayerAbilities[i].a_spike = 0;
 			PlayerAbilities[i].a_moreAmmo = 5;
-			PlayerAbilities[i].a_bouncing = 5;
+			PlayerAbilities[i].a_bouncing = 0;
 			
 			PlayerAbilities[i].a_gravity = 0.0f;
-			PlayerAbilities[i].a_explosive = 0.0f;
+			PlayerAbilities[i].a_explosive = 1.0f;
 			PlayerAbilities[i].a_longerDash = 0.0f;
-			PlayerAbilities[i].a_fasterShot = 0.0f;
+			PlayerAbilities[i].a_fasterShot = 50.0f;
 			PlayerAbilities[i].a_fasterDash = 0.0f;
 			PlayerAbilities[i].a_largerShot = 0.0f;
 			PlayerAbilities[i].a_growingDash = 0.0f;
@@ -182,9 +182,9 @@ public class GameManager : MonoBehaviour {
 			PlayerAbilities[i].a_block = false;
 			PlayerAbilities[i].a_seeking = false;
 			PlayerAbilities[i].a_poison = false;
-			PlayerAbilities[i].a_spread = true;
+			PlayerAbilities[i].a_spread = false;
 			PlayerAbilities[i].a_blink = false;
-			PlayerAbilities[i].a_piercing = true;
+			PlayerAbilities[i].a_piercing = false;
 			PlayerAbilities[i].a_spikingDash = false;
 			
 		}
