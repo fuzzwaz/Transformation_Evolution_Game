@@ -24,13 +24,13 @@ namespace FuzzyEvolutions
 
          // Begin DeathRange
 
-         var setDeathRangeShortMembership = new NegativeLinearFunction(4, 10);
+         var setDeathRangeShortMembership = new NegativeLinearFunction(2, 8);
          var setDeathRangeShort = new FuzzySet(Labels.Set_DeathRange_Short, setDeathRangeShortMembership);
 
-         var setDeathRangeMidMembership = new TriangleFunction(4, 10, 18);
+         var setDeathRangeMidMembership = new TriangleFunction(2, 8, 16);
          var setDeathRangeMid = new FuzzySet(Labels.Set_DeathRange_Mid, setDeathRangeMidMembership);
 
-         var setDeathRangeLongMembership = new PositiveLinearFunction(10, 18);
+         var setDeathRangeLongMembership = new PositiveLinearFunction(8, 16);
          var setDeathRangeLong = new FuzzySet(Labels.Set_DeathRange_Long, setDeathRangeLongMembership);
 
          var inputDeathRange = new InputVariable(Labels.InputVariable_DeathRange);
