@@ -42,13 +42,13 @@ namespace FuzzyEvolutions
 
          // Begin BulletsShot
 
-         var setBulletsShotLowMembership = new NegativeLinearFunction(3, 7);
+         var setBulletsShotLowMembership = new NegativeLinearFunction(2, 5);
          var setBulletsShotLow = new FuzzySet(Labels.Set_BulletsShot_Low, setBulletsShotLowMembership);
 
-         var setBulletsShotMediumMembership = new TriangleFunction(3, 7, 11);
+         var setBulletsShotMediumMembership = new TriangleFunction(2, 5, 8);
          var setBulletsShotMedium = new FuzzySet(Labels.Set_BulletsShot_Medium, setBulletsShotMediumMembership);
 
-         var setBulletsShotHighMembership = new PositiveLinearFunction(7, 11);
+         var setBulletsShotHighMembership = new PositiveLinearFunction(5, 8);
          var setBulletsShotHigh = new FuzzySet(Labels.Set_BulletsShot_High, setBulletsShotHighMembership);
 
          var inputBulletsShot = new InputVariable(Labels.InputVariable_BulletsShot);
@@ -60,13 +60,13 @@ namespace FuzzyEvolutions
 
          // Begin Dashes
 
-         var setDashesLowMembership = new NegativeLinearFunction(2, 6);
+         var setDashesLowMembership = new NegativeLinearFunction(1, 5);
          var setDashesLow = new FuzzySet(Labels.Set_Dashes_Low, setDashesLowMembership);
 
-         var setDashesMediumMembership = new TriangleFunction(2, 6, 10);
+         var setDashesMediumMembership = new TriangleFunction(1, 5, 9);
          var setDashesMedium = new FuzzySet(Labels.Set_Dashes_Medium, setDashesMediumMembership);
 
-         var setDashesHighMembership = new PositiveLinearFunction(6, 10);
+         var setDashesHighMembership = new PositiveLinearFunction(5, 9);
          var setDashesHigh = new FuzzySet(Labels.Set_Dashes_High, setDashesHighMembership);
 
          var inputDashes = new InputVariable(Labels.InputVariable_Dashes);
@@ -124,13 +124,13 @@ namespace FuzzyEvolutions
 
          // Begin LengthOfLife
 
-         var setLengthOfLifeShortMembership = new NegativeLinearFunction(8, 18);
+         var setLengthOfLifeShortMembership = new NegativeLinearFunction(4, 12);
          var setLengthOfLifeShort = new FuzzySet(Labels.Set_LengthOfLife_Short, setLengthOfLifeShortMembership);
 
-         var setLengthOfLifeMediumMembership = new TriangleFunction(8, 18, 26);
+         var setLengthOfLifeMediumMembership = new TriangleFunction(4, 12, 20);
          var setLengthOfLifeMedium = new FuzzySet(Labels.Set_LengthOfLife_Medium, setLengthOfLifeMediumMembership);
 
-         var setLengthOfLifeLongMembership = new PositiveLinearFunction(18, 26);
+         var setLengthOfLifeLongMembership = new PositiveLinearFunction(12, 20);
          var setLengthOfLifeLong = new FuzzySet(Labels.Set_LengthOfLife_Long, setLengthOfLifeLongMembership);
 
          var inputLengthOfLife = new InputVariable(Labels.InputVariable_LengthOfLife);
