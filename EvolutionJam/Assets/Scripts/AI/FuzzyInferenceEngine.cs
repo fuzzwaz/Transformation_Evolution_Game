@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using FuzzyEvolutions.MembershipFunctions;
 using FuzzyEvolutions.Inputs;
@@ -431,6 +432,316 @@ namespace FuzzyEvolutions
          outputExpression18.Add(outputExplosiveShot, Labels.Set_Helpful_Low);
          _rules.Add(new FuzzyRule(inputExpression18, outputExpression18));
 
+         var inputExpression19 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium),
+               new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_Some)));
+         var outputExpression19 = new Dictionary<FuzzyOutput, string>();
+         outputExpression19.Add(outputBouncingShot, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression19, outputExpression19, (Player player) => {
+            return !player.HasEvolution(Labels.Output_BouncingShot);
+         }));
+
+         var inputExpression20 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Long),
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low)));
+         var outputExpression20 = new Dictionary<FuzzyOutput, string>();
+         outputExpression20.Add(outputBouncingShot, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression20, outputExpression20));
+
+         var inputExpression21 = new FuzzyOr(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low),
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some));
+         var outputExpression21 = new Dictionary<FuzzyOutput, string>();
+         outputExpression21.Add(outputBouncingShot, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression21, outputExpression21));
+
+         var inputExpression22 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium),
+               new FuzzyAnd(
+                  new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_Some),
+                  new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Mid))));
+         var outputExpression22 = new Dictionary<FuzzyOutput, string>();
+         outputExpression22.Add(outputPiercingShot, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression22, outputExpression22, (Player player) => {
+            return !player.HasEvolution(Labels.Output_PiercingShot);
+         }));
+
+         var inputExpression23 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Long),
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low)));
+         var outputExpression23 = new Dictionary<FuzzyOutput, string>();
+         outputExpression23.Add(outputPiercingShot, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression23, outputExpression23, (Player player) => {
+            return !player.HasEvolution(Labels.Output_PiercingShot);
+         }));
+
+         var inputExpression24 = new FuzzyOr(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low),
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some));
+         var outputExpression24 = new Dictionary<FuzzyOutput, string>();
+         outputExpression24.Add(outputPiercingShot, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression24, outputExpression24, (Player player) => {
+            return !player.HasEvolution(Labels.Output_PiercingShot);
+         }));
+
+         var inputExpression25 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Mid),
+               new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_None)));
+         var outputExpression25 = new Dictionary<FuzzyOutput, string>();
+         outputExpression25.Add(outputLongerDash, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression25, outputExpression25, (Player player) => {
+            return !player.HasEvolution(Labels.Output_LongerDash);
+         }));
+
+         var inputExpression26 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_Some),
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Long)));
+         var outputExpression26 = new Dictionary<FuzzyOutput, string>();
+         outputExpression26.Add(outputLongerDash, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression26, outputExpression26));
+
+         var inputExpression27 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low),
+            new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Long));
+         var outputExpression27 = new Dictionary<FuzzyOutput, string>();
+         outputExpression27.Add(outputLongerDash, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression27, outputExpression27));
+
+         var inputExpression28 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High),
+            new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium));
+         var outputExpression28 = new Dictionary<FuzzyOutput, string>();
+         outputExpression28.Add(outputFasterDash, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression28, outputExpression28, (Player player) => {
+            return !player.HasEvolution(Labels.Output_FasterDash);
+         }));
+
+         var inputExpression29 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Long)));
+         var outputExpression29 = new Dictionary<FuzzyOutput, string>();
+         outputExpression29.Add(outputFasterDash, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression29, outputExpression29));
+
+         var inputExpression30 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low),
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High));
+         var outputExpression30 = new Dictionary<FuzzyOutput, string>();
+         outputExpression30.Add(outputFasterDash, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression30, outputExpression30));
+
+         var inputExpression31 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Long)));
+         var outputExpression31 = new Dictionary<FuzzyOutput, string>();
+         outputExpression31.Add(outputMoreAmmo, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression31, outputExpression31, (Player player) => {
+            return !player.HasEvolution(Labels.Output_MoreAmmo);
+         }));
+
+         var inputExpression32 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low)));
+         var outputExpression32 = new Dictionary<FuzzyOutput, string>();
+         outputExpression32.Add(outputMoreAmmo, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression32, outputExpression32));
+
+         var inputExpression33 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High),
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low));
+         var outputExpression33 = new Dictionary<FuzzyOutput, string>();
+         outputExpression33.Add(outputMoreAmmo, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression33, outputExpression33));
+
+         var inputExpression34 = new FuzzyAnd(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Long),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High)));
+         var outputExpression34 = new Dictionary<FuzzyOutput, string>();
+         outputExpression34.Add(outputFasterBullets, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression34, outputExpression34, (Player player) => {
+            return !player.HasEvolution(Labels.Output_FasterBullets);
+         }));
+
+         var inputExpression35 = new FuzzyAnd(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Long),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium)));
+         var outputExpression35 = new Dictionary<FuzzyOutput, string>();
+         outputExpression35.Add(outputFasterBullets, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression35, outputExpression35));
+
+         var inputExpression36 = new FuzzyOr(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Short),
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some));
+         var outputExpression36 = new Dictionary<FuzzyOutput, string>();
+         outputExpression36.Add(outputFasterBullets, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression36, outputExpression36));
+
+         var inputExpression37 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium),
+               new FuzzyAnd(
+                  new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_Some),
+                  new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some))));
+         var outputExpression37 = new Dictionary<FuzzyOutput, string>();
+         outputExpression37.Add(outputLargerBullets, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression37, outputExpression37, (Player player) => {
+            return !player.HasEvolution(Labels.Output_LargerBullets);
+         }));
+
+         var inputExpression38 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium),
+               new FuzzyAnd(
+                  new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_None),
+                  new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some))));
+         var outputExpression38 = new Dictionary<FuzzyOutput, string>();
+         outputExpression38.Add(outputLargerBullets, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression38, outputExpression38));
+
+         var inputExpression39 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some),
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low));
+         var outputExpression39 = new Dictionary<FuzzyOutput, string>();
+         outputExpression39.Add(outputLargerBullets, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression39, outputExpression39));
+
+         var inputExpression40 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High),
+               new FuzzyAnd(
+                  new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_None),
+                     new FuzzyAnd(
+                        new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Mid),
+                        new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some)))));
+         var outputExpression40 = new Dictionary<FuzzyOutput, string>();
+         outputExpression40.Add(outputGrowingDash, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression40, outputExpression40, (Player player) => {
+            return !player.HasEvolution(Labels.Output_GrowingDash);
+         }));
+
+         var inputExpression41 = new FuzzyAnd(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Short),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_None),
+               new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some)));
+         var outputExpression41 = new Dictionary<FuzzyOutput, string>();
+         outputExpression41.Add(outputGrowingDash, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression41, outputExpression41));
+
+         var inputExpression42 = new FuzzyOr(
+            new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some),
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_None));
+         var outputExpression42 = new Dictionary<FuzzyOutput, string>();
+         outputExpression42.Add(outputGrowingDash, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression42, outputExpression42));
+
+         var inputExpression43 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some),
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Short));
+         var outputExpression43 = new Dictionary<FuzzyOutput, string>();
+         outputExpression43.Add(outputSpikesWhenDashing, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression43, outputExpression43, (Player player) => {
+            return !player.HasEvolution(Labels.Output_SpikesWhenDashing);
+         }));
+
+         var inputExpression44 = new FuzzyAnd(
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some),
+            new FuzzyLiteral(inputDashes, Labels.Set_Dashes_High));
+         var outputExpression44 = new Dictionary<FuzzyOutput, string>();
+         outputExpression44.Add(outputSpikesWhenDashing, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression44, outputExpression44, (Player player) => {
+            return !player.HasEvolution(Labels.Output_SpikesWhenDashing);
+         }));
+
+         var inputExpression45 = new FuzzyNot(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Short));
+         var outputExpression45 = new Dictionary<FuzzyOutput, string>();
+         outputExpression45.Add(outputSpikesWhenDashing, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression45, outputExpression45, (Player player) => {
+            return !player.HasEvolution(Labels.Output_SpikesWhenDashing);
+         }));
+
+         var inputExpression46 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_High),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_None),
+               new FuzzyOr(
+                  new FuzzyLiteral(inputSurroundings, Labels.Set_Surroundings_Lots),
+                  new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Mid))));
+         var outputExpression46 = new Dictionary<FuzzyOutput, string>();
+         outputExpression46.Add(outputBlackHoleShot, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression46, outputExpression46, (Player player) => {
+            return !player.HasEvolution(Labels.Output_BlackHoleShot);
+         }));
+
+         var inputExpression47 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_None),
+               new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Low)));
+         var outputExpression47 = new Dictionary<FuzzyOutput, string>();
+         outputExpression47.Add(outputBlackHoleShot, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression47, outputExpression47));
+
+         var inputExpression48 = new FuzzyOr(
+            new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some),
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Low));
+         var outputExpression48 = new Dictionary<FuzzyOutput, string>();
+         outputExpression48.Add(outputBlackHoleShot, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression48, outputExpression48));
+
+         var inputExpression49 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputBulletHits, Labels.Set_BulletHits_Some),
+               new FuzzyAnd(
+                  new FuzzyLiteral(inputDashes, Labels.Set_Dashes_Medium),
+                  new FuzzyLiteral(inputDashHits, Labels.Set_DashHits_Some))));
+         var outputExpression49 = new Dictionary<FuzzyOutput, string>();
+         outputExpression49.Add(outputFasterMovement, Labels.Set_Helpful_High);
+         _rules.Add(new FuzzyRule(inputExpression49, outputExpression49));
+
+         var inputExpression50 = new FuzzyAnd(
+            new FuzzyLiteral(inputBulletsShot, Labels.Set_BulletsShot_Medium),
+            new FuzzyAnd(
+               new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Mid),
+               new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Short)));
+         var outputExpression50 = new Dictionary<FuzzyOutput, string>();
+         outputExpression50.Add(outputFasterMovement, Labels.Set_Helpful_Medium);
+         _rules.Add(new FuzzyRule(inputExpression50, outputExpression50));
+
+         var inputExpression51 = new FuzzyAnd(
+            new FuzzyLiteral(inputDeathRange, Labels.Set_DeathRange_Long),
+            new FuzzyLiteral(inputLengthOfLife, Labels.Set_LengthOfLife_Medium));
+         var outputExpression51 = new Dictionary<FuzzyOutput, string>();
+         outputExpression51.Add(outputFasterMovement, Labels.Set_Helpful_Low);
+         _rules.Add(new FuzzyRule(inputExpression51, outputExpression51));
+
          #endregion
       }
 
@@ -451,7 +762,7 @@ namespace FuzzyEvolutions
             MakeInputVariableValues(playerInformation);
             var selectionLabel = EvaluateRules(_players[playerInformation.playerNum]);
 
-            Console.WriteLine("Player " + playerInformation.playerNum);
+            /*Console.WriteLine("Player " + playerInformation.playerNum);
             Console.WriteLine("---------\n");
 
             foreach (var output in _outputs)
@@ -459,7 +770,7 @@ namespace FuzzyEvolutions
                Console.WriteLine(output.Label + ": " + output.Centroid);
             }
 
-            Console.WriteLine("\nSelection: " + selectionLabel);
+            Console.WriteLine("\nSelection: " + selectionLabel);*/
 
             _inputVariableValues.Clear();
             ResetAllOutputs();
