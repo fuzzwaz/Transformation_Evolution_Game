@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.972351, y: -13.4049044, z: 0}
+  m_LocalPosition: {x: -170.964935, y: -71.493576, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 485412}
@@ -131,8 +131,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.421000004, y: -.144999996, z: 0}
-  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_LocalPosition: {x: -.00400000019, y: .00899999961, z: 0}
+  m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1}
   m_Children: []
   m_Father: {fileID: 466844}
   m_RootOrder: 0
@@ -143,8 +143,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.268000007, y: -.108999997, z: 0}
-  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 1}
   m_Children: []
   m_Father: {fileID: 466844}
   m_RootOrder: 1
@@ -206,6 +206,7 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: 0ecffadad4ca97c4dac33d7dfc95ce77, type: 3}
   hitWallSound: {fileID: 8300000, guid: e07d6eba6a3c76145a0895119872e896, type: 3}
   pickUpSound: {fileID: 8300000, guid: c4a23947cb0f5724d8fb01eac30de4e7, type: 3}
+  bounces: 0
 --- !u!212 &21202178
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -282,7 +283,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300054, guid: 04b2146e9ce15454ea88c553c338bba9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4456b38eb4dabc644869954e2cde524b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21257968
 SpriteRenderer:
@@ -308,7 +309,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300080, guid: 04b2146e9ce15454ea88c553c338bba9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85219fc3d2fae4d40a1d098a84f064de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21298588
 SpriteRenderer:
