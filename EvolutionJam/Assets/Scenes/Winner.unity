@@ -2431,7 +2431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401850, guid: bcb150a13bd27f442adc88b2a0969bfa, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11401740, guid: bcb150a13bd27f442adc88b2a0969bfa, type: 2}
       propertyPath: sceneToLoad
@@ -4818,6 +4818,10 @@ Prefab:
       propertyPath: m_BackGroundColor.b
       value: .397058845
       objectReference: {fileID: 0}
+    - target: {fileID: 8297280, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fc1cbacce556be498f34aff81da5ec8, type: 3}
     m_RemovedComponents:
     - {fileID: 9523752, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
     - {fileID: 11435928, guid: 9260c93d5d1815246a1d701664a1d239, type: 2}
