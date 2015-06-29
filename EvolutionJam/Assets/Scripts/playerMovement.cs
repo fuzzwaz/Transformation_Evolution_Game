@@ -48,7 +48,7 @@ public class playerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GM = GameObject.Find ("GameManager");
+		GM = GameObject.Find ("GameManagerMaster");
 		rb2d = GetComponent<Rigidbody2D>();
 		poisionDelayTemp = poisionDelay;
 		savedDashDuration = dashDuration;
@@ -216,6 +216,7 @@ public class playerMovement : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position);
 		dead = true;
 		playerAnimation.SetTrigger("Die");
+		GM = GameObject.Find ("GameManagerMaster");
 		GM.gameObject.GetComponent<GameManager>().playerDied(playerNum);
         this.GetComponent<playerAbilities>().lengthOfLife = lengthOfLife;
         this.GetComponent<playerAbilities>().UpdatePlayerInfo();
@@ -236,6 +237,12 @@ public class playerMovement : MonoBehaviour {
 	{
 		dashSpeed += increase;
 		
+	}
+
+	public void increaseSpeed (float increase)
+	{
+		playerSpeed += increase;	
+		savedPlayerSpeed = playerSpeed;
 	}
 
 	public void CleanUpDeceasedBody()

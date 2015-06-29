@@ -30,25 +30,32 @@ public class playerAbilities : MonoBehaviour {
 	public float p_FasterShot = 0.0f;
 	public float p_LargerShot = 0.0f;
 	public float p_GrowingDash = 0.0f;
+	public float p_GravityShot = 0.0f;
+	public float p_FasterMovement = 0.0f;
 	
 	private int playerNumID;
 	private GameObject gameManager;
-
+	private GameObject evolutionaryParts;
 
 
 	// Use this for initialization
 	void Start () {
 		playerNumID = this.GetComponent<playerMovement>().playerNum - 1;
-		gameManager = (GameObject) GameObject.Find("GameManager");
+		gameManager = (GameObject) GameObject.Find("GameManagerMaster");
+		evolutionaryParts = this.transform.FindChild("EvolutionParts").gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!p_Block)
+		{
+			evolutionaryParts.transform.FindChild("Armor").gameObject.SetActive(false);
+		}
 	}
 
 	public void UpdatePlayerInfo()
 	{
+		gameManager = (GameObject) GameObject.Find("GameManagerMaster");
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].bulletsShot = bulletsShot;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].dashesMade = dashesMade;
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].bulletHits = bulletHits;
@@ -58,22 +65,26 @@ public class playerAbilities : MonoBehaviour {
 		gameManager.GetComponent<GameManager>().PlayerInformation[playerNumID].dashingHits = dashingHits;
 	}
 
-	public void abl_Block(bool has) //complete and tested
+	public void abl_Block(bool has) //art
 	{
 		p_Block = has;
+		if (p_Block)
+		{
+			evolutionaryParts.transform.FindChild("Armor").gameObject.SetActive(true);
+		}
 	}
 
-	public void abl_SeekingShot(bool has) //complete and tested 
+	public void abl_SeekingShot(bool has) //art 
 	{
 		p_Seeking = has;
 	}
 
-	public void abl_PoisonGas(bool has) //complete and tested
+	public void abl_PoisonGas(bool has) //art
 	{
 		p_Poision = has;
 	}
 
-	public void abl_BodySpike(int spikes) //completed and tested
+	public void abl_BodySpike(int spikes) //art
 	{
 		if (spikes > 0)
 		{
@@ -82,17 +93,21 @@ public class playerAbilities : MonoBehaviour {
 		}
 	}
 
-	public void abl_SpreadShot(bool has) //completed and tested
+	public void abl_SpreadShot(bool has) //art
 	{
 		p_SpreadShot = has;
+		if (p_SpreadShot)
+		{
+			evolutionaryParts.transform.FindChild("Mandibles").gameObject.SetActive(true);
+		}
 	}
 
-	public void abl_ExplosiveShot(float explosiveMultiplier) //completed and tested
+	public void abl_ExplosiveShot(float explosiveMultiplier) //art
 	{
 		p_explosiveShot = explosiveMultiplier;
 	}
 
-	public void abl_BouncingShot(int bounces) //completed and tested
+	public void abl_BouncingShot(int bounces) //art
 	{
 		p_Bouncing = bounces;
 	}
@@ -102,24 +117,34 @@ public class playerAbilities : MonoBehaviour {
 		//print ("BLINK IS REMOVED");
 	}
 
-	public void abl_PiercingShot(bool has) //completed and tested
+	public void abl_PiercingShot(bool has) //art
 	{
 		p_PiercingShot = has;
 	}
 
-	public void abl_LongerDash(float additionalSeconds)  //completed and tested
+	public void abl_LongerDash(float additionalSeconds)  //art
 	{
 		p_LongerDash = additionalSeconds;
 		this.GetComponent<playerMovement>().increaseDashDuration(p_LongerDash);
+
+		if (p_LongerDash > 0.0f)
+		{
+			evolutionaryParts.transform.FindChild("Wings").gameObject.SetActive(true);
+		}
 	}
 
-	public void abl_FasterDash(float seconds) //completed and tested
+	public void abl_FasterDash(float seconds) //art
 	{
 		p_FasterDash = seconds; 
 		this.GetComponent<playerMovement>().increaseDashSpeed(p_FasterDash);
+
+		if (p_FasterDash > 0.0f)
+		{
+			evolutionaryParts.transform.FindChild("SlugPart").gameObject.SetActive(true);
+		}
 	}
 
-	public void abl_MoreAmmo(int additionalBullets) //completed and tested
+	public void abl_MoreAmmo(int additionalBullets) //art
 	{
 		p_MoreBullets = additionalBullets;
 		this.GetComponent<playerShooting>().increaseAmmoCount(p_MoreBullets);
@@ -129,35 +154,45 @@ public class playerAbilities : MonoBehaviour {
 		}
 	}
 
-	public void abl_FasterShot(float force) //completed and tested
+	public void abl_FasterShot(float force) //art
 	{
 		p_FasterShot = force;
 		this.GetComponent<playerShooting>().increaseShotSpeed(p_FasterShot);
+
+		if (p_FasterShot > 0.0f)
+		{
+			evolutionaryParts.transform.FindChild("Arms").gameObject.SetActive(true);
+		}
 	}
 
-	public void abl_LargerShot(float sizeMultiplier) //completed and tested
+	public void abl_LargerShot(float sizeMultiplier) 
 	{
 		p_LargerShot = sizeMultiplier;
 	}
 
-	public void abl_GrowingDash(float sizeMultiplier) //Completed and tested
+	public void abl_GrowingDash(float sizeMultiplier) 
 	{
 		p_GrowingDash = sizeMultiplier;
 	}
 
-	public void abl_SpikingDash(bool has)
+	public void abl_SpikingDash(bool has) //art
 	{
 		p_SpikingDash = has;
-		//this.transform.FindChild("DashSpikes").gameObject.SetActive(p_SpikingDash);
 	}
 
-	public void abl_GravityShot(float gravityMultiplier)
+	public void abl_GravityShot(float gravityMultiplier) 
 	{
-
+		p_GravityShot = gravityMultiplier;
 	}
 
-	public void abl_FasterMovement(float speedmultplier)
+	public void abl_FasterMovement(float speedmultplier) 
 	{
+		p_FasterMovement = speedmultplier;
+		this.GetComponent<playerMovement>().increaseSpeed(p_FasterMovement);
 
+		if (p_FasterMovement > 0.0f)
+		{
+			evolutionaryParts.transform.FindChild("Legs").gameObject.SetActive(true);
+		}
 	}
 }

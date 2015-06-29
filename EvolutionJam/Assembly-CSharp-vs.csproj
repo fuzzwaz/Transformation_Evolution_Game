@@ -73,14 +73,17 @@
      <Compile Include="Assets\Scripts\AI\MembershipFunctions\PositiveLinearFunction.cs" />
      <Compile Include="Assets\Scripts\AI\MembershipFunctions\TriangleFunction.cs" />
      <Compile Include="Assets\Scripts\Colorizer.cs" />
+     <Compile Include="Assets\Scripts\EvolutionToGameSwitcher.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
+     <Compile Include="Assets\Scripts\PlayerWinDecipherer.cs" />
      <Compile Include="Assets\Scripts\TailLink.cs" />
      <Compile Include="Assets\Scripts\TailStack.cs" />
      <Compile Include="Assets\Scripts\WhaleMovement.cs" />
      <Compile Include="Assets\Scripts\bodySpike.cs" />
      <Compile Include="Assets\Scripts\bullet.cs" />
+     <Compile Include="Assets\Scripts\createGM.cs" />
      <Compile Include="Assets\Scripts\dashAttack.cs" />
      <Compile Include="Assets\Scripts\playerAbilities.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />

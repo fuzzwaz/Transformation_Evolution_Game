@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 04b2146e9ce15454ea88c553c338bba9
-timeCreated: 1435439535
+timeCreated: 1435546300
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -469,6 +469,36 @@ TextureImporter:
         y: 0
         width: 3003
         height: 1729
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_11
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 2789
+        width: 122
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_12
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 2962
+        width: 124
+        height: 144
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: amoeba stuff_13
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 3105
+        width: 125
+        height: 151
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

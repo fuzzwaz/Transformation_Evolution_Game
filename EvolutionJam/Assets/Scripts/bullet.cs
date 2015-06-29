@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class bullet : MonoBehaviour {
 	
 
 	public int playerBullet = 1;
 	private bool notExploded = true;
+	private bool noGravity = true;
 	private float timer = 0.0f;
 	private bool canGet = false;
 	private bool pickedUp = false;
@@ -15,6 +17,9 @@ public class bullet : MonoBehaviour {
 	public GameObject explosion;
 	public AudioClip shotSound, hitWallSound, pickUpSound;
 	public int bounces = 0;
+
+	private List<GameObject> objects;
+
 	// Use this for initialization
 	void Start () {
 		player = (GameObject) GameObject.Find ("Player" + playerBullet);
@@ -32,6 +37,27 @@ public class bullet : MonoBehaviour {
 		}
 		AudioSource.PlayClipAtPoint(shotSound, Camera.main.transform.position);
 		bounces = player.GetComponent<playerAbilities>().p_Bouncing;
+		objects = new List<GameObject>();
+
+		if (player.GetComponent<playerAbilities>().p_explosiveShot > 0.0f)
+		{
+			this.transform.FindChild("Fire").gameObject.SetActive(true);
+		}
+
+		if (player.GetComponent<playerAbilities>().p_Bouncing > 0)
+		{
+			this.transform.FindChild("Bubble").gameObject.SetActive(true);
+		}
+
+		if (player.GetComponent<playerAbilities>().p_PiercingShot)
+		{
+			this.transform.FindChild("Wind").gameObject.SetActive(true);
+		}
+
+		if (player.GetComponent<playerAbilities>().p_Seeking)
+		{
+			this.transform.FindChild("Spike").gameObject.SetActive(true);
+		}
 	}
 	
 	// Update is called once per frame
@@ -47,8 +73,6 @@ public class bullet : MonoBehaviour {
 			seekPlayer = 2;
 		}
 
-
-
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
@@ -58,12 +82,53 @@ public class bullet : MonoBehaviour {
 		{
 			if (notExploded)
 			{
-				GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
-				newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
-				newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
-				                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
-                                                				newExplosion.transform.localScale.z);
-				notExploded = false;
+				if ((col.gameObject.name == "Bullet" || col.gameObject.name == "Bullet(Clone)") && col.gameObject.GetComponent<bullet>().canGet)
+				{
+					GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
+					newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
+					newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
+					                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
+					                                                newExplosion.transform.localScale.z);
+					notExploded = false;
+				}
+				if (col.gameObject.tag == "Player")
+				{
+					if (col.gameObject.GetComponent<playerMovement>().playerNum != playerBullet)
+					{
+						GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
+						newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
+						newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
+						                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
+						                                                newExplosion.transform.localScale.z);
+						notExploded = false;
+					}
+				}
+				else if (col.gameObject.tag == "Bullet")
+				{
+
+				}
+				else
+				{
+					GameObject newExplosion = (GameObject) GameObject.Instantiate(explosion,this.transform.position,Quaternion.identity);
+					newExplosion.GetComponent<Explosion>().setPlayerNum(playerBullet);
+					newExplosion.transform.localScale = new Vector3(newExplosion.transform.localScale.x * player.GetComponent<playerAbilities>().p_explosiveShot,
+					                                                newExplosion.transform.localScale.y * player.GetComponent<playerAbilities>().p_explosiveShot,
+	                                                				newExplosion.transform.localScale.z);
+					notExploded = false;
+				}
+			}
+		}
+
+		if (player.gameObject != null && player.GetComponent<playerAbilities>().p_GravityShot > 0.0f)
+		{
+			if (noGravity)
+			{
+				foreach (GameObject obj in objects)
+				{
+					Vector2 pullDirection = this.transform.position - obj.gameObject.transform.position;
+					obj.gameObject.GetComponent<Rigidbody2D>().AddForce(pullDirection * player.GetComponent<playerAbilities>().p_GravityShot);
+				}
+				noGravity = false;
 			}
 		}
 		if (col.gameObject.tag == "Block")
@@ -144,12 +209,33 @@ public class bullet : MonoBehaviour {
 
 	}
 
+	bool isTouching (string name)
+	{
+		foreach (GameObject obj in objects)
+		{
+			if (obj.transform.parent.gameObject.name == name)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+
 	void OnTriggerEnter2D (Collider2D col)
 	{
 		if (col.tag == "Player" && col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet && seekPlayer == 0)
 		{
 			seekPlayer = 1;
 			seekingPlayer = col.gameObject;
+		}
+
+		if (col.tag == "Player" && col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
+		{
+			if (!isTouching (col.transform.parent.gameObject.name))
+			{
+				objects.Add (col.gameObject);
+			}
 		}
 	}
 	void OnTriggerStay2D (Collider2D col)
@@ -158,6 +244,22 @@ public class bullet : MonoBehaviour {
 		{
 			seekPlayer = 1;
 			seekingPlayer = col.gameObject;
+		}
+
+		if (col.tag == "Player" && col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
+		{
+			if (!isTouching (col.transform.parent.gameObject.name))
+			{
+				objects.Add (col.gameObject);
+			}
+		}
+	}
+
+	void OnTriggerExit2D (Collider2D col)
+	{
+		if (col.tag == "Player" && col.gameObject.GetComponentInParent<playerMovement>().playerNum != playerBullet)
+		{
+			objects.Remove(col.gameObject);
 		}
 	}
 
