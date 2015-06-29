@@ -13,12 +13,16 @@ namespace FuzzyEvolutions
       private readonly ICollection<FuzzyOutput> _outputs;
       private readonly ICollection<FuzzyRule> _rules;
 
+      private readonly Random _rng;
+
       public FuzzyInferenceEngine()
       {
          _players = new Dictionary<int, Player>();
          _inputVariableValues = new Dictionary<string, int>();
          _outputs = new List<FuzzyOutput>();
          _rules = new List<FuzzyRule>();
+
+         _rng = new Random();
 
          #region Input Setup
 
@@ -153,109 +157,109 @@ namespace FuzzyEvolutions
          var outputHighMembership = new PositiveLinearFunction(50, 100);
          var outputSetHigh = new FuzzySet(Labels.Set_Helpful_High, outputHighMembership);
 
-         var outputBlock = new FuzzyOutput(Labels.Output_Block);
+         var outputBlock = new FuzzyOutput(Labels.Output_Block, false);
          outputBlock.AddSet(outputSetLow);
          outputBlock.AddSet(outputSetMedium);
          outputBlock.AddSet(outputSetHigh);
          _outputs.Add(outputBlock);
 
-         var outputSeekingShot = new FuzzyOutput(Labels.Output_SeekingShot);
+         var outputSeekingShot = new FuzzyOutput(Labels.Output_SeekingShot, false);
          outputSeekingShot.AddSet(outputSetLow);
          outputSeekingShot.AddSet(outputSetMedium);
          outputSeekingShot.AddSet(outputSetHigh);
          _outputs.Add(outputSeekingShot);
 
-         var outputPoisonGas = new FuzzyOutput(Labels.Output_PoisonGas);
+         var outputPoisonGas = new FuzzyOutput(Labels.Output_PoisonGas, false);
          outputPoisonGas.AddSet(outputSetLow);
          outputPoisonGas.AddSet(outputSetMedium);
          outputPoisonGas.AddSet(outputSetHigh);
          _outputs.Add(outputPoisonGas);
 
-         var outputSpikeOnBody = new FuzzyOutput(Labels.Output_SpikeOnBody);
+         var outputSpikeOnBody = new FuzzyOutput(Labels.Output_SpikeOnBody, true);
          outputSpikeOnBody.AddSet(outputSetLow);
          outputSpikeOnBody.AddSet(outputSetMedium);
          outputSpikeOnBody.AddSet(outputSetHigh);
          _outputs.Add(outputSpikeOnBody);
 
-         var outputSpreadShot = new FuzzyOutput(Labels.Output_SpreadShot);
+         var outputSpreadShot = new FuzzyOutput(Labels.Output_SpreadShot, false);
          outputSpreadShot.AddSet(outputSetLow);
          outputSpreadShot.AddSet(outputSetMedium);
          outputSpreadShot.AddSet(outputSetHigh);
          _outputs.Add(outputSpreadShot);
 
-         var outputExplosiveShot = new FuzzyOutput(Labels.Output_ExplosiveShot);
+         var outputExplosiveShot = new FuzzyOutput(Labels.Output_ExplosiveShot, true);
          outputExplosiveShot.AddSet(outputSetLow);
          outputExplosiveShot.AddSet(outputSetMedium);
          outputExplosiveShot.AddSet(outputSetHigh);
          _outputs.Add(outputExplosiveShot);
 
-         var outputBouncingShot = new FuzzyOutput(Labels.Output_BouncingShot);
+         var outputBouncingShot = new FuzzyOutput(Labels.Output_BouncingShot, true);
          outputBouncingShot.AddSet(outputSetLow);
          outputBouncingShot.AddSet(outputSetMedium);
          outputBouncingShot.AddSet(outputSetHigh);
          _outputs.Add(outputBouncingShot);
 
-         var outputBlink = new FuzzyOutput(Labels.Output_Blink);
+         var outputBlink = new FuzzyOutput(Labels.Output_Blink, false);
          outputBlink.AddSet(outputSetLow);
          outputBlink.AddSet(outputSetMedium);
          outputBlink.AddSet(outputSetHigh);
          _outputs.Add(outputBlink);
 
-         var outputPiercingShot = new FuzzyOutput(Labels.Output_PiercingShot);
+         var outputPiercingShot = new FuzzyOutput(Labels.Output_PiercingShot, false);
          outputPiercingShot.AddSet(outputSetLow);
          outputPiercingShot.AddSet(outputSetMedium);
          outputPiercingShot.AddSet(outputSetHigh);
          _outputs.Add(outputPiercingShot);
 
-         var outputLongerDash = new FuzzyOutput(Labels.Output_LongerDash);
+         var outputLongerDash = new FuzzyOutput(Labels.Output_LongerDash, true);
          outputLongerDash.AddSet(outputSetLow);
          outputLongerDash.AddSet(outputSetMedium);
          outputLongerDash.AddSet(outputSetHigh);
          _outputs.Add(outputLongerDash);
 
-         var outputFasterDash = new FuzzyOutput(Labels.Output_FasterDash);
+         var outputFasterDash = new FuzzyOutput(Labels.Output_FasterDash, true);
          outputFasterDash.AddSet(outputSetLow);
          outputFasterDash.AddSet(outputSetMedium);
          outputFasterDash.AddSet(outputSetHigh);
          _outputs.Add(outputFasterDash);
 
-         var outputMoreAmmo = new FuzzyOutput(Labels.Output_MoreAmmo);
+         var outputMoreAmmo = new FuzzyOutput(Labels.Output_MoreAmmo, true);
          outputMoreAmmo.AddSet(outputSetLow);
          outputMoreAmmo.AddSet(outputSetMedium);
          outputMoreAmmo.AddSet(outputSetHigh);
          _outputs.Add(outputMoreAmmo);
 
-         var outputFasterBullets = new FuzzyOutput(Labels.Output_FasterBullets);
+         var outputFasterBullets = new FuzzyOutput(Labels.Output_FasterBullets, true);
          outputFasterBullets.AddSet(outputSetLow);
          outputFasterBullets.AddSet(outputSetMedium);
          outputFasterBullets.AddSet(outputSetHigh);
          _outputs.Add(outputFasterBullets);
 
-         var outputLargerBullets = new FuzzyOutput(Labels.Output_LargerBullets);
+         var outputLargerBullets = new FuzzyOutput(Labels.Output_LargerBullets, true);
          outputLargerBullets.AddSet(outputSetLow);
          outputLargerBullets.AddSet(outputSetMedium);
          outputLargerBullets.AddSet(outputSetHigh);
          _outputs.Add(outputLargerBullets);
 
-         var outputGrowingDash = new FuzzyOutput(Labels.Output_GrowingDash);
+         var outputGrowingDash = new FuzzyOutput(Labels.Output_GrowingDash, true);
          outputGrowingDash.AddSet(outputSetLow);
          outputGrowingDash.AddSet(outputSetMedium);
          outputGrowingDash.AddSet(outputSetHigh);
          _outputs.Add(outputGrowingDash);
 
-         var outputSpikesWhenDashing = new FuzzyOutput(Labels.Output_SpikesWhenDashing);
+         var outputSpikesWhenDashing = new FuzzyOutput(Labels.Output_SpikesWhenDashing, false);
          outputSpikesWhenDashing.AddSet(outputSetLow);
          outputSpikesWhenDashing.AddSet(outputSetMedium);
          outputSpikesWhenDashing.AddSet(outputSetHigh);
          _outputs.Add(outputSpikesWhenDashing);
 
-         var outputBlackHoleShot = new FuzzyOutput(Labels.Output_BlackHoleShot);
+         var outputBlackHoleShot = new FuzzyOutput(Labels.Output_BlackHoleShot, true);
          outputBlackHoleShot.AddSet(outputSetLow);
          outputBlackHoleShot.AddSet(outputSetMedium);
          outputBlackHoleShot.AddSet(outputSetHigh);
          _outputs.Add(outputBlackHoleShot);
 
-         var outputFasterMovement = new FuzzyOutput(Labels.Output_FasterMovement);
+         var outputFasterMovement = new FuzzyOutput(Labels.Output_FasterMovement, true);
          outputFasterMovement.AddSet(outputSetLow);
          outputFasterMovement.AddSet(outputSetMedium);
          outputFasterMovement.AddSet(outputSetHigh);
@@ -797,16 +801,28 @@ namespace FuzzyEvolutions
             rule.Evaluate(_inputVariableValues, player);
          }
 
-         FuzzyOutput selectedOutput = null;
+         List<FuzzyOutput> selectedOutputs = new List<FuzzyOutput>();
          foreach (var output in _outputs)
          {
+            if (player.HasEvolution(output.Label) && !output.Repeatable)
+            {
+               continue;
+            }
+
             output.EstimateCentroid();
 
-            if (selectedOutput == null || selectedOutput.Centroid < output.Centroid)
+            if (selectedOutputs.Count == 0 || selectedOutputs[0].Centroid.Equals(output.Centroid))
             {
-               selectedOutput = output;
+               selectedOutputs.Add(output);
+            }
+            else if (selectedOutputs[0].Centroid < output.Centroid)
+            {
+               selectedOutputs.Clear();
+               selectedOutputs.Add(output);
             }
          }
+
+         var selectedOutput = selectedOutputs[_rng.Next(selectedOutputs.Count)];
 
          player.AddEvolution(selectedOutput.Label);
 
